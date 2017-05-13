@@ -5,7 +5,7 @@ const YTDL = require("ytdl-core"); //This downloads your favorite music from You
 const { getInfo } = require("ytdl-getinfo"); //This gets the information of your favorite music from Youtube.
 const config = require("./config.json"); //It's ze "config file! This is where your put your super secret tokens or favorite prefix.
 
-function play(connection, message) { //I can't explain this but this function is the music section of this bot.
+function play(connection, message) {
     var server = servers[message.guild.id];
     getInfo(server.queue[0]).then(info => {
         var embed = new Discord.RichEmbed()
@@ -22,7 +22,7 @@ function play(connection, message) { //I can't explain this but this function is
     });
 }
 
-var eightBall = [ //This is used for the !ask command
+var eightBall = [
     "It is certain", "It is decidedly so", "Without a doubt", "Yes definitely",
     "You may rely on it", "As I see it, yes", "Most likely", "Outlook good",
     "Yes", "Signs point to yes", "Reply hazy try again", "Ask again later",
@@ -52,7 +52,7 @@ bot.on("message", function(message) {
             message.channel.send("Pong!");
             break;
         
-        case "ask": //Feeling lucky/unlucky? Check your fortune today!
+        case "ask":
             if (args[1]) message.channel.send(eightBall[Math.floor(Math.random() * eightBall.length)]);
             else message.channel.send("I guess I can't read.");
             break;
@@ -61,7 +61,6 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .setAuthor("About " + bot.user.username, bot.user.avatarURL)
                 .setTitle("FriendsNone's Personal Discord Bot Project!")
-                .setDescription("Source code available at https://github.com/FriendsNone/NoneBot")
                 .setTimestamp()
             message.channel.send({ embed });
             break;
@@ -76,14 +75,6 @@ bot.on("message", function(message) {
             message.channel.send({ embed });
             break;
         
-        case "help": //Don't know what commands to play with? This command shows you what this bot can do!
-            var embed = new Discord.RichEmbed()
-                .setAuthor("Here are some helpful commnads")
-                .addField("All commands are prefixed with !", "ping \nask [question] \nabout \ninfo \nplay [yt_link] \nskip \nstop")
-                .setTimestamp()
-            message.channel.send({ embed });
-            break;
-
         case "play": //Play something from YouTube will ya.
             if(!args[1]) return message.channel.send("Can't find any music?");
             if(!message.member.voiceChannel) return message.channel.send("You must be in a voice channel");
