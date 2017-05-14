@@ -1,11 +1,11 @@
-//Greetings undead warrior, please enjoy your stay and praise the Sun!
+//Greetings undead programmer, please enjoy your stay and don't forget to praise the Sun!
 
 const Discord = require("discord.js"); //The API itself
 const YTDL = require("ytdl-core"); //This downloads your favorite music from YouTube.
 const { getInfo } = require("ytdl-getinfo"); //This gets the information of your favorite music from Youtube.
 const config = require("./config.json"); //It's ze "config file! This is where your put your super secret tokens or favorite prefix.
 
-function play(connection, message) {
+function play(connection, message) { //Where all the music magic happens
     var server = servers[message.guild.id];
     getInfo(server.queue[0]).then(info => {
         var embed = new Discord.RichEmbed()
@@ -22,7 +22,7 @@ function play(connection, message) {
     });
 }
 
-var eightBall = [
+var eightBall = [ //Used for the !ask command
     "It is certain", "It is decidedly so", "Without a doubt", "Yes definitely",
     "You may rely on it", "As I see it, yes", "Most likely", "Outlook good",
     "Yes", "Signs point to yes", "Reply hazy try again", "Ask again later",
@@ -52,7 +52,7 @@ bot.on("message", function(message) {
             message.channel.send("Pong!");
             break;
         
-        case "ask":
+        case "ask": //Feeling lucky/unlucky? Try asking some questions with !ask
             if (args[1]) message.channel.send(eightBall[Math.floor(Math.random() * eightBall.length)]);
             else message.channel.send("I guess I can't read.");
             break;
@@ -88,7 +88,6 @@ bot.on("message", function(message) {
 
         case "skip": //This command will skip anything, so say good bye to rickrolls in no time!
             var server = servers[message.guild.id];
-            message.channel.send("Skipping");
             if (server.dispatcher) server.dispatcher.end();
             break;
 

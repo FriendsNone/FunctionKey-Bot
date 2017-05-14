@@ -18,7 +18,7 @@
   "homepage": "https://github.com/FriendsNone/NoneBot#readme",
   "dependencies": {
     "discord.js": "^11.1.0",
-    "opusscript": "0.0.3",
+    "node-opus": "^0.2.6",
     "ytdl-core": "^0.14.0",
     "ytdl-getinfo": "^1.0.3"
   }
