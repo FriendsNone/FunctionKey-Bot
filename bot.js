@@ -22,6 +22,43 @@ function play(connection, message) { //Where all the music magic happens
     });
 }
 
+function setGame() { //Want your bot to play some games (not really), add some here!'
+    var presence = {};
+    presence.game = {};
+    presence.status = "online";
+    presence.afk = false;
+    
+    switch (Math.floor(Math.random() * 1000) % 26) {
+        case 0:  presence.game.name = "with function keys"; break;
+        case 1:  presence.game.name = "winver.exe"; break; //About Windows
+        case 2:  presence.game.name = "UserAccountControlSettings.exe"; break; //Change UAC Settings
+        case 3:  presence.game.name = "wscui.cpl"; break; //Action Center
+        case 4:  presence.game.name = "compmgmt.msc"; break; //Computer Management
+        case 5:  presence.game.name = "msinfo32.exe"; break; //System Information
+        case 6:  presence.game.name = "eventvwr.exe"; break; //Event Viewer
+        case 7:  presence.game.name = "appwiz.cpl"; break; //Programs
+        case 8:  presence.game.name = "inetcpl.cpl"; break; //Internet Options
+        case 9:  presence.game.name = "ipconfig.exe"; break; //Internet Protocol Configuration
+        case 10: presence.game.name = "perfmon.exe"; break; //Performance Monitor
+        case 11: presence.game.name = "resmon.exe"; break; //Resource Monitor
+        case 12: presence.game.name = "taskmgr.exe"; break; //Task Manager
+        case 13: presence.game.name = "cmd.exe"; break; //Command Prompt
+        case 14: presence.game.name = "regedt32.exe"; break; //Registry Editor
+        case 15: presence.game.name = "msra.exe"; break; //Remote Assistance
+        case 16: presence.game.name = "rstrui.exe"; break; //System Restore
+        case 17: presence.game.name = "explorer.exe"; break; //Windows Explorer
+        case 18: presence.game.name = "iexplore.exe"; break; //Internet Explorer
+        case 19: presence.game.name = "mspaint.exe"; break; //Paint
+        case 20: presence.game.name = "dxdiag.exe"; break; //DirectX Diagnostic Tool
+        case 21: presence.game.name = "notepad.exe"; break; //Notepad
+        case 22: presence.game.name = "devenv.exe"; break; //Microsoft Visual Studio
+        case 23: presence.game.name = "chrome.exe"; break; //Google Chrome
+        case 24: presence.game.name = "DARKSOULS.exe"; break; //Dark Souls: Prepare to Die Edition
+        case 25: presence.game.name = "the quiet game, why don't you play it instead?"; break; //Suggested by Rain#8241
+    }
+    bot.user.setPresence(presence);
+}
+
 var eightBall = [ //Used for the !ask command
     "It is certain", "It is decidedly so", "Without a doubt", "Yes definitely",
     "You may rely on it", "As I see it, yes", "Most likely", "Outlook good",
@@ -36,6 +73,15 @@ var servers = {};
 
 bot.on("ready", function() {
     console.log("Ready"); //Tells you when the bot is ready
+	bot.setInterval(setGame, 180000); //Changes the "game" every 3 minutes
+    setGame(); //i don't know
+});
+
+bot.on("guildMemberAdd", function(member) { //This bot has some respect to new users
+    member.guild.channels.find("name", "general").send("Welcome to the server " + member.toString()); //Gives a welcome message to the new user
+    try { member.addRole(member.guild.roles.find("name", "New")); } //Tries to add the new member to a role named "New"
+    catch(err) { //If not found. It'll try to make the "New" role
+        member.guild.createRole({ name: "New", color: "#000000", hoist: true, permissions: [] }).then(function(role) { member.addRole(role); }) }
 });
 
 bot.on("message", function(message) {
@@ -74,7 +120,7 @@ bot.on("message", function(message) {
                 .setTimestamp()
             message.channel.send({ embed });
             break;
-        
+
         case "play": //Play something from YouTube will ya.
             if(!args[1]) return message.channel.send("Can't find any music?");
             if(!message.member.voiceChannel) return message.channel.send("You must be in a voice channel");
