@@ -11,6 +11,7 @@ function play(connection, message) { //Where all the music magic happens
         var embed = new Discord.RichEmbed()
             .setAuthor("Now Playing")
             .setTitle(info.items[0].title)
+            .setColor("GREEN")
             .setTimestamp()
          message.channel.send({ embed })
     });
@@ -28,33 +29,28 @@ function setGame() { //Want your bot to play some games (not really), add some h
     presence.status = "online";
     presence.afk = false;
     
-    switch (Math.floor(Math.random() * 1000) % 26) {
+    switch (Math.floor(Math.random() * 1000) % 18) {
+        //My take on being funny. I know, I totally suck at it.
         case 0:  presence.game.name = "with function keys"; break;
         case 1:  presence.game.name = "winver.exe"; break; //About Windows
-        case 2:  presence.game.name = "UserAccountControlSettings.exe"; break; //Change UAC Settings
-        case 3:  presence.game.name = "wscui.cpl"; break; //Action Center
-        case 4:  presence.game.name = "compmgmt.msc"; break; //Computer Management
-        case 5:  presence.game.name = "msinfo32.exe"; break; //System Information
-        case 6:  presence.game.name = "eventvwr.exe"; break; //Event Viewer
-        case 7:  presence.game.name = "appwiz.cpl"; break; //Programs
-        case 8:  presence.game.name = "inetcpl.cpl"; break; //Internet Options
-        case 9:  presence.game.name = "ipconfig.exe"; break; //Internet Protocol Configuration
-        case 10: presence.game.name = "perfmon.exe"; break; //Performance Monitor
-        case 11: presence.game.name = "resmon.exe"; break; //Resource Monitor
-        case 12: presence.game.name = "taskmgr.exe"; break; //Task Manager
-        case 13: presence.game.name = "cmd.exe"; break; //Command Prompt
-        case 14: presence.game.name = "regedt32.exe"; break; //Registry Editor
-        case 15: presence.game.name = "msra.exe"; break; //Remote Assistance
-        case 16: presence.game.name = "rstrui.exe"; break; //System Restore
-        case 17: presence.game.name = "explorer.exe"; break; //Windows Explorer
-        case 18: presence.game.name = "iexplore.exe"; break; //Internet Explorer
-        case 19: presence.game.name = "mspaint.exe"; break; //Paint
-        case 20: presence.game.name = "dxdiag.exe"; break; //DirectX Diagnostic Tool
-        case 21: presence.game.name = "notepad.exe"; break; //Notepad
-        case 22: presence.game.name = "devenv.exe"; break; //Microsoft Visual Studio
-        case 23: presence.game.name = "chrome.exe"; break; //Google Chrome
-        case 24: presence.game.name = "DARKSOULS.exe"; break; //Dark Souls: Prepare to Die Edition
-        case 25: presence.game.name = "the quiet game, why don't you play it instead?"; break; //Suggested by Rain#8241
+        case 2:  presence.game.name = "taskmgr.exe"; break; //Task Manager
+        case 3:  presence.game.name = "cmd.exe"; break; //Command Prompt
+        case 4:  presence.game.name = "regedt32.exe"; break; //Registry Editor
+        case 5:  presence.game.name = "explorer.exe"; break; //Windows Explorer
+        case 6:  presence.game.name = "iexplore.exe"; break; //Internet Explorer
+        case 7:  presence.game.name = "mspaint.exe"; break; //Paint
+        case 8:  presence.game.name = "dxdiag.exe"; break; //DirectX Diagnostic Tool
+        case 9:  presence.game.name = "notepad.exe"; break; //Notepad
+        case 10: presence.game.name = "devenv.exe"; break; //Microsoft Visual Studio
+        case 11: presence.game.name = "chrome.exe"; break; //Google Chrome
+        case 12: presence.game.name = "DARKSOULS.exe"; break; //Dark Souls: Prepare to Die Edition
+        //Some User suggested stuffs. Thanks guys!
+        case 13: presence.game.name = "the quiet game, why don't you play it instead?"; break; //Suggested by Rain
+        case 14: presence.game.name = "around with fn key"; break; //Suggested by projsh_
+        case 15: presence.game.name = "around with theShell"; break; //Suggested by vicr123
+        case 16: presence.game.name = "memememe"; break;  //Suggested (not really) by UnitedShoes
+        case 17: presence.game.name = "MEME?!"; break; //Suggested (not really) by bear2602
+
     }
     bot.user.setPresence(presence);
 }
@@ -105,8 +101,8 @@ bot.on("message", function(message) {
 
         case "about": //Uhh... Do I need to explain this?
             var embed = new Discord.RichEmbed()
-                .setAuthor("About " + bot.user.username, bot.user.avatarURL)
-                .setTitle("FriendsNone's Personal Discord Bot Project!")
+                .setAuthor("About " + bot.user.username, bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
+                .setTitle("The bot that's fun, awesome, and made by a lazy person that acts like a function key")
                 .setTimestamp()
             message.channel.send({ embed });
             break;
@@ -117,6 +113,18 @@ bot.on("message", function(message) {
                 .addField("User ID:", message.author.id)
                 .addField("User created at:", message.author.createdAt)
                 .setThumbnail(message.author.avatarURL)
+                .setTimestamp()
+            message.channel.send({ embed });
+            break;
+
+        case "help": //Want help? This will list all of the available commands just for you c;
+            var embed = new Discord.RichEmbed()
+                .setAuthor(bot.user.username + "'s List of commands", bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
+                .setDescription("All of these commands are prefixed with fn:")
+                .addField("Useful commands", "ping \nask \ninfo", true)
+                .addField("Music commands", "play \nskip \nstop", true)
+                .addField("Boring commands", "help \nabout", true)
+                .setColor("BLUE")
                 .setTimestamp()
             message.channel.send({ embed });
             break;
@@ -143,7 +151,7 @@ bot.on("message", function(message) {
             break;
 
         default: //This will tell you if you entered a wrong command.
-            message.channel.send("Invaild command");
+            message.channel.send("I think you've entered a wrong command. Try `" + config.prefix + "help` for the list of usable commands.");
     }
 });
 
