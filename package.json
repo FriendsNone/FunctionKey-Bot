@@ -1,7 +1,7 @@
 {
   "name": "nonebot",
   "version": "0.0.1",
-  "description": "FriendsNone' Personal Discord Bot Project",
+  "description": "The bot that's fun, awesome, and made by a lazy person",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
