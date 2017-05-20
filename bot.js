@@ -50,7 +50,6 @@ function setGame() { //Want your bot to play some games (not really), add some h
         case 15: presence.game.name = "around with theShell"; break; //Suggested by vicr123
         case 16: presence.game.name = "memememe"; break;  //Suggested (not really) by UnitedShoes
         case 17: presence.game.name = "MEME?!"; break; //Suggested (not really) by bear2602
-
     }
     bot.user.setPresence(presence);
 }
@@ -69,7 +68,7 @@ var servers = {};
 
 bot.on("ready", function() {
     console.log("Ready"); //Tells you when the bot is ready
-	bot.setInterval(setGame, 180000); //Changes the "game" every 3 minutes
+    bot.setInterval(setGame, 180000); //Changes the "game" every 3 minutes
     setGame(); //i don't know
 });
 
@@ -96,13 +95,13 @@ bot.on("message", function(message) {
         
         case "ask": //Feeling lucky/unlucky? Try asking some questions with !ask
             if (args[1]) message.channel.send(eightBall[Math.floor(Math.random() * eightBall.length)]);
-            else message.channel.send("I guess I can't read.");
+            else message.channel.send("Probably try checking your grammer again.");
             break;
 
         case "about": //Uhh... Do I need to explain this?
             var embed = new Discord.RichEmbed()
                 .setAuthor("About " + bot.user.username, bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
-                .setTitle("The bot that's fun, awesome, and made by a lazy person that acts like a function key")
+                .setTitle("The bot that's fun, awesome, and made by a lazy person")
                 .setTimestamp()
             message.channel.send({ embed });
             break;
@@ -151,7 +150,7 @@ bot.on("message", function(message) {
             break;
 
         default: //This will tell you if you entered a wrong command.
-            message.channel.send("I think you've entered a wrong command. Try `" + config.prefix + "help` for the list of usable commands.");
+            message.channel.send("Uhh... Yeah... You might need to look at `" + config.prefix + "help`");
     }
 });
 
