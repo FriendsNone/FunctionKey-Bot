@@ -29,7 +29,7 @@ function setGame() { //Want your bot to play some games (not really), add some h
     presence.status = "online";
     presence.afk = false;
     
-    switch (Math.floor(Math.random() * 1000) % 18) {
+    switch (Math.floor(Math.random() * 1000) % 22) {
         //My take on being funny. I know, I totally suck at it.
         case 0:  presence.game.name = "with function keys"; break;
         case 1:  presence.game.name = "winver.exe"; break; //About Windows
@@ -50,6 +50,10 @@ function setGame() { //Want your bot to play some games (not really), add some h
         case 15: presence.game.name = "around with theShell"; break; //Suggested by vicr123
         case 16: presence.game.name = "memememe"; break;  //Suggested (not really) by UnitedShoes
         case 17: presence.game.name = "MEME?!"; break; //Suggested (not really) by bear2602
+        case 18: presence.game.name = "music"; break; //Suggested by lolrepeatlol™
+        case 19: presence.game.name = "ShiftOS" break; //Suggested by lolrepeatlol™
+        case 20: presence.game.name = "Life: The Game" break; //Suggested by lolrepeatlol™
+        case 21: presence.game.name = "idk" break; //Suggested (not really) by lolrepeatlol™
     }
     bot.user.setPresence(presence);
 }
