@@ -52,6 +52,7 @@ function setGame() { //Want your bot to play some games (not really), add some h
         case 17: presence.game.name = "MEME?!"; break; //Suggested (not really) by bear2602
         case 18: presence.game.name = "music"; break; //Suggested by lolrepeatlol™
         case 19: presence.game.name = "ShiftOS"; break; //Suggested by lolrepeatlol™
+        case 20: presence.game.name = "Life: The Game"; break; //Suggested by lolrepeatlol™
         case 21: presence.game.name = "idk"; break; //Suggested (not really) by lolrepeatlol™
     }
     bot.user.setPresence(presence);
