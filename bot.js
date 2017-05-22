@@ -1,4 +1,4 @@
-//Greetings undead programmer, please enjoy your stay and don't forget to praise the Sun!
+﻿//Greetings undead programmer, please enjoy your stay and don't forget to praise the Sun!
 
 const Discord = require("discord.js"); //The API itself
 const YTDL = require("ytdl-core"); //This downloads your favorite music from YouTube.
@@ -51,9 +51,8 @@ function setGame() { //Want your bot to play some games (not really), add some h
         case 16: presence.game.name = "memememe"; break;  //Suggested (not really) by UnitedShoes
         case 17: presence.game.name = "MEME?!"; break; //Suggested (not really) by bear2602
         case 18: presence.game.name = "music"; break; //Suggested by lolrepeatlol™
-        case 19: presence.game.name = "ShiftOS" break; //Suggested by lolrepeatlol™
-        case 20: presence.game.name = "Life: The Game" break; //Suggested by lolrepeatlol™
-        case 21: presence.game.name = "idk" break; //Suggested (not really) by lolrepeatlol™
+        case 19: presence.game.name = "ShiftOS"; break; //Suggested by lolrepeatlol™
+        case 21: presence.game.name = "idk"; break; //Suggested (not really) by lolrepeatlol™
     }
     bot.user.setPresence(presence);
 }
@@ -91,6 +90,10 @@ bot.on("message", function(message) {
 
     switch (args[0].toLowerCase()) { //This makes what mistake you typed (e.g. piNG) to lower case
         case "test": //Want to make a new command? Do it here!
+            let age = args[1];
+            let sex = args[2];
+            let location = args[3];
+            message.channel.send(`Hello ${message.author.username}, I see you're a ${age} year old ${sex} from ${location}. Wanna date?`);       
             break;
         
         case "ping": //It's the most popular and common command
@@ -104,7 +107,7 @@ bot.on("message", function(message) {
 
         case "about": //Uhh... Do I need to explain this?
             var embed = new Discord.RichEmbed()
-                .setAuthor("About " + bot.user.username, bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
+                .setAuthor(`About ${bot.user.username}`, bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
                 .setTitle("The bot that's fun, awesome, and made by a lazy person")
                 .setTimestamp()
             message.channel.send({ embed });
@@ -112,7 +115,7 @@ bot.on("message", function(message) {
 
         case "info": //This command gives you information about you and sends it in a nice embed
             var embed = new Discord.RichEmbed()
-                .setAuthor(message.author.username + "#" + message.author.discriminator + "'s Information")
+                .setAuthor(`${message.author.username}#${message.author.discriminator}'s Information`)
                 .addField("User ID:", message.author.id)
                 .addField("User created at:", message.author.createdAt)
                 .setThumbnail(message.author.avatarURL)
@@ -122,8 +125,8 @@ bot.on("message", function(message) {
 
         case "help": //Want help? This will list all of the available commands just for you c;
             var embed = new Discord.RichEmbed()
-                .setAuthor(bot.user.username + "'s List of commands", bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
-                .setDescription("All of these commands are prefixed with fn:")
+                .setAuthor(`${bot.user.username}'s List of commands`, bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
+                .setDescription(`All of these commands are prefixed with ${config.prefix}`)
                 .addField("Useful commands", "ping \nask \ninfo", true)
                 .addField("Music commands", "play \nskip \nstop", true)
                 .addField("Boring commands", "help \nabout", true)
@@ -154,7 +157,7 @@ bot.on("message", function(message) {
             break;
 
         default: //This will tell you if you entered a wrong command.
-            message.channel.send("Uhh... Yeah... You might need to look at `" + config.prefix + "help`");
+            message.channel.send(`Uhh... Yeah... You might need to look at ${config.prefix}help`);
     }
 });
 
