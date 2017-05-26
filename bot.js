@@ -1,21 +1,22 @@
 ﻿//Greetings undead programmer, please enjoy your stay and don't forget to praise the Sun!
 
 const Discord = require("discord.js"); //The API itself
-const YTDL = require("ytdl-core"); //This downloads your favorite music from YouTube.
-const { getInfo } = require("ytdl-getinfo"); //This gets the information of your favorite music from Youtube.
+const ytdl = require("ytdl-core"); //This downloads your favorite music from YouTube.
 const config = require("./config.json"); //It's ze "config file! This is where your put your super secret tokens or favorite prefix.
 
 function play(connection, message) { //Where all the music magic happens
-    var server = servers[message.guild.id];
-    getInfo(server.queue[0]).then(info => {
+    var server = servers[message.guild.id];  
+    ytdl.getInfo(server.queue[0], function(err, info) {
         var embed = new Discord.RichEmbed()
             .setAuthor("Now Playing")
-            .setTitle(info.items[0].title)
+            .setTitle(info.title)
+            .setDescription(`Requested by: ${message.author.username}`)      
             .setColor("GREEN")
             .setTimestamp()
          message.channel.send({ embed })
+         console.log(`${message.author.tag} played ${info.title}`);
     });
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly", quality: "lowest"}));
+    server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly", quality: "lowest"}));
     server.queue.shift();
     server.dispatcher.on("end", function() {
         if (server.queue[0]) play(connection, message);
@@ -71,16 +72,19 @@ var bot = new Discord.Client();
 var servers = {};
 
 bot.on("ready", function() {
-    console.log("Ready"); //Tells you when the bot is ready
+    console.log(`${bot.user.username} is now ready!`); //Tells you when the bot is ready
     bot.setInterval(setGame, 180000); //Changes the "game" every 3 minutes
     setGame(); //i don't know
 });
 
 bot.on("guildMemberAdd", function(member) { //This bot has some respect to new users
-    member.guild.channels.find("name", "general").send("Welcome to the server " + member.toString()); //Gives a welcome message to the new user
-    try { member.addRole(member.guild.roles.find("name", "New")); } //Tries to add the new member to a role named "New"
-    catch(err) { //If not found. It'll try to make the "New" role
-        member.guild.createRole({ name: "New", color: "#000000", hoist: true, permissions: [] }).then(function(role) { member.addRole(role); }) }
+    member.guild.channels.find("name", "general").send(`Welcome to the server ${member.toString()}`); //Gives a welcome message to the new user
+    console.log(`${member.toString()} joined the server`);
+});
+
+bot.on("guildMemberRemove", function(member) {
+    member.guild.channels.find("name", "general").send(`${member.toString()} left the server`);
+    console.log(`${member.toString()} left the server`);
 });
 
 bot.on("message", function(message) {
@@ -90,11 +94,7 @@ bot.on("message", function(message) {
     var args = message.content.substring(config.prefix.length).split(" "); //This splits the messages. Can't explain any further
 
     switch (args[0].toLowerCase()) { //This makes what mistake you typed (e.g. piNG) to lower case
-        case "test": //Want to make a new command? Do it here!
-            let age = args[1];
-            let sex = args[2];
-            let location = args[3];
-            message.channel.send(`Hello ${message.author.username}, I see you're a ${age} year old ${sex} from ${location}. Wanna date?`);       
+        case "test": //Want to make a new command? Do it here!      
             break;
         
         case "ping": //It's the most popular and common command
@@ -116,7 +116,7 @@ bot.on("message", function(message) {
 
         case "info": //This command gives you information about you and sends it in a nice embed
             var embed = new Discord.RichEmbed()
-                .setAuthor(`${message.author.username}#${message.author.discriminator}'s Information`)
+                .setAuthor(`${message.author.tag}'s Information`)
                 .addField("User ID:", message.author.id)
                 .addField("User created at:", message.author.createdAt)
                 .setThumbnail(message.author.avatarURL)
@@ -155,6 +155,16 @@ bot.on("message", function(message) {
         case "stop": //Bored with music? Now you can stop them with this command!
             var server = servers[message.guild.id];
             if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+            break;
+
+        case "off":
+            message.channel.send("Welp. Nobody coded a prompt. Shutting down!").then(function() {
+                console.log(`${message.author.tag} turned off the bot`);
+                process.exit(0);
+            }).catch(function() {
+                console.log(`${message.author.tag} turned off the bot`);
+                process.exit(0);
+            });
             break;
 
         default: //This will tell you if you entered a wrong command.
