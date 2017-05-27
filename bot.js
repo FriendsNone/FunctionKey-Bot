@@ -14,13 +14,14 @@ function play(connection, message) { //Where all the music magic happens
             .setColor("GREEN")
             .setTimestamp()
          message.channel.send({ embed })
-         console.log(`${message.author.tag} played ${info.title}`);
+         console.log(`${message.author.tag} from ${message.guild.name} played ${info.title}`);
     });
     server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly", quality: "lowest"}));
     server.queue.shift();
     server.dispatcher.on("end", function() {
         if (server.queue[0]) play(connection, message);
         else connection.disconnect();
+        musicPlaying = false;
     });
 }
 
@@ -70,6 +71,8 @@ var eightBall = [ //Used for the !ask command
 //Some variables that you will ignore :)
 var bot = new Discord.Client();
 var servers = {};
+var musicPlaying = false
+//var offPrompt = false
 
 bot.on("ready", function() {
     console.log(`${bot.user.username} is now ready!`); //Tells you when the bot is ready
@@ -98,7 +101,7 @@ bot.on("message", function(message) {
             break;
         
         case "ping": //It's the most popular and common command
-            message.channel.send("Pong!");
+            message.channel.send(`${bot.ping}ms worth of Pong!`);
             break;
         
         case "ask": //Feeling lucky/unlucky? Try asking some questions with !ask
@@ -109,7 +112,7 @@ bot.on("message", function(message) {
         case "about": //Uhh... Do I need to explain this?
             var embed = new Discord.RichEmbed()
                 .setAuthor(`About ${bot.user.username}`, bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
-                .setTitle("The bot that's fun, awesome, and made by a lazy person")
+                .setDescription(`An awesome bot made by a lazy person`)
                 .setTimestamp()
             message.channel.send({ embed });
             break;
@@ -145,6 +148,7 @@ bot.on("message", function(message) {
             server.queue.push(args[1]);
 
             if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) { play(connection, message); });
+            musicPlaying = true;
             break;
 
         case "skip": //This command will skip anything, so say good bye to rickrolls in no time!
@@ -155,14 +159,16 @@ bot.on("message", function(message) {
         case "stop": //Bored with music? Now you can stop them with this command!
             var server = servers[message.guild.id];
             if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+            musicPlaying = false;
             break;
 
         case "off":
+            if(musicPlaying == true) return message.channel.send(`Uhh... Music is still playing. Just use ${config.prefix}stop instead.`);
             message.channel.send("Welp. Nobody coded a prompt. Shutting down!").then(function() {
-                console.log(`${message.author.tag} turned off the bot`);
+                console.log(`${message.author.tag} from ${message.guild.name}  turned off the bot`);
                 process.exit(0);
             }).catch(function() {
-                console.log(`${message.author.tag} turned off the bot`);
+                console.log(`${message.author.tag} from ${message.guild.name} turned off the bot`);
                 process.exit(0);
             });
             break;
