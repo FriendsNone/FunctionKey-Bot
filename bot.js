@@ -158,8 +158,12 @@ bot.on("message", function(message) {
 
         case "stop": //Bored with music? Now you can stop them with this command!
             var server = servers[message.guild.id];
+            try {
             if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
             musicPlaying = false;
+            } catch (err) {
+                
+            }
             break;
 
         case "off":
