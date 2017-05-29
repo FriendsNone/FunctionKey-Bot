@@ -1,0 +1,24 @@
+{
+  "name": "nonebot",
+  "version": "1.0.0",
+  "description": "An awesome bot made by a lazy person.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FriendsNone/NoneBot.git"
+  },
+  "author": "Wizzardo Meowy (FriendsNone)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FriendsNone/NoneBot/issues"
+  },
+  "homepage": "https://github.com/FriendsNone/NoneBot#readme",
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "opusscript": "0.0.3",
+    "ytdl-core": "^0.14.1"
+  }
+}
