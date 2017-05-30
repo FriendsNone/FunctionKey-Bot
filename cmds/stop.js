@@ -1,4 +1,5 @@
-var servers = {};
+var music = require('../music.js');
+var servers = music.servers
 
 module.exports.run = async (bot, message, args) => {
     var server = servers[message.guild.id];
@@ -6,8 +7,8 @@ module.exports.run = async (bot, message, args) => {
     try {
         if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     } catch (err) {
-        console.log("opusscript is drunk again.");
-        console.log("note to self. use node-opus");
+        console.log("[ERROR WARNING] opusscript is drunk again.");
+        console.log("[ERROR WARNING] note to self. use node-opus");
     }
 }
 

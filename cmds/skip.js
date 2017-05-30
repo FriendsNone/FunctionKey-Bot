@@ -1,16 +1,6 @@
-function play(connection, message) {
-    server.dispatcher.on("end", function() {
-    if (server.queue[0]) play(connection, message);
-    else try {
-            connection.disconnect();
-        } catch (e) {
-            console.log("opusscript is drunk again.");
-            console.log("note to self. use node-opus");
-        }
-    });
-}
-
-var servers = {};
+var music = require('../music.js');
+var play = music.play
+var servers = music.servers
 
 module.exports.run = async (bot, message, args) => {    
     var server = servers[message.guild.id];
