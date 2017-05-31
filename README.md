@@ -3,12 +3,12 @@ A Discord bot made by a lazy person
 
 # Required stuffs
 - Programs
--- Node.JS (7.10.0+)
--- FFmpeg
+  - Node.JS (7.10.0+)
+  - FFmpeg
 - Dependencies
--- `discord.js`
--- `opusscript` (use `node-opus` if possible)
--- `ytdl-core`
+  - `discord.js`
+  - `opusscript` (use `node-opus` if possible)
+  - `ytdl-core`
 
 # Installation
 Assuming that you've already installed git, Node.JS and FFmpeg. If not, install them now.
