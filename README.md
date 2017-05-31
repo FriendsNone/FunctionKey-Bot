@@ -26,4 +26,6 @@ If you're a Windows user, follow these steps for getting FFmpeg working
 # Notes from the Dev
 -`skip` works now! ~~Due to the rewrite I can't get the `skip` function working. The only workaround is to listen the whole song or enter the `stop` command and play another one.~~
 
+-The new `help` command doesn't updates for new command files. Soo, you'll have to update it manually. Sorry about that :P
+
 -It's sort of stable... But! Expect some bugs crawling around.

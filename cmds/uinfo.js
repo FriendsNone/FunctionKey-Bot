@@ -15,5 +15,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "uinfo"
+    name: "uinfo",
+    usage: "uinfo [user]",
+    desc: "Gives user's information in a nice embed."
 }

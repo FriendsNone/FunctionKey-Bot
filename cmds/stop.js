@@ -13,5 +13,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "stop"
+    name: "stop",
+    usage: "stop",
+    desc: "Stops the music from playing."
 }

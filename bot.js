@@ -19,7 +19,11 @@ fs.readdir("./cmds/", (err, files) => {
     jsFiles.forEach((f, i) => {
         let props = require(`./cmds/${f}`);
         console.log(`${i + 1}: ${f} loaded!`);
-        bot.commands.set(props.help.name, props);
+        try {
+            bot.commands.set(props.help.name, props);
+        } catch (err) {
+            console.log("^ Invaild command file");
+        }
     });
 });
 

@@ -16,5 +16,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "umute"
+    name: "umute",
+    usage: "umute [user]",
+    desc: "Unmutes that annoying user you've just muted."
 }

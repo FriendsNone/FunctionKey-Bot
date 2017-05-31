@@ -14,5 +14,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "play"
+    name: "play",
+    usage: "play [link/video id]",
+    desc: "Plays your favorite music from YouTube."
 }
