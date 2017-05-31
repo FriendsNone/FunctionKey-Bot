@@ -1,4 +1,5 @@
-# NoneBot
+# FunctionKey-Bot
+Alternatively named as NoneBot.
 A Discord bot made by a lazy person
 
 # Required stuffs
