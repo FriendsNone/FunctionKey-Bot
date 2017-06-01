@@ -3,8 +3,8 @@ var play = music.play
 var servers = music.servers
 
 module.exports.run = async (bot, message, args) => {
-    if(!args[0]) return message.channel.send("Can't find any music?");
-    if(!message.member.voiceChannel) return message.channel.send("You must be in a voice channel");
+    if(!args[0]) return message.channel.send("You didn't provide a link/video id. Don't expect me to find videos.");
+    if(!message.member.voiceChannel) return message.channel.send("How can you listen to music without joining a voice channel? Magic...?");
     if(!servers[message.guild.id]) servers[message.guild.id] = { queue: [] };
 
     var server = servers[message.guild.id];

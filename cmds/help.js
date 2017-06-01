@@ -6,9 +6,9 @@ module.exports.run = async (bot, message, args) => {
         let embed = new Discord.RichEmbed()
             .setAuthor(`${bot.user.username}'s List of commands`, bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
             .setDescription(`All of these commands are prefixed with ${config.prefix}`)
-            .addField("Useful commands", "ping \nask \nuinfo", true)
+            .addField("Useful commands", "ping \nask \ncalc \nuinfo \nhelp", true)
             .addField("Music commands", "play \nskip \nstop", true)
-            .addField("Boring commands", "help \noff", true)
+            .addField("Staff commands", "mute \numute \noff", true)
             .setColor("BLUE")
             .setTimestamp()
         message.channel.send({ embed });

@@ -23,7 +23,7 @@ var eightBall = [
 
 module.exports.run = async (bot, message, args) => {
     if (args[0]) message.channel.send(eightBall[Math.floor(Math.random() * eightBall.length)]);
-    else message.channel.send("Probably try checking your grammer again.");
+    else message.channel.send("I can't read minds you know. I guess you need to learn how to type.");
 }
 
 module.exports.help = {

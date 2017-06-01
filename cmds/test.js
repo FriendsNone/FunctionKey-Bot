@@ -1,7 +1,14 @@
 module.exports.run = async (bot, message, args) => {
-    console.log("test");
+    //await message.channel.send("Psst!");
+    await message.channel.send("Psst!", {files: [
+        {
+            attachment: "./pics/psst.gif"
+        }
+    ]});
 }
 
 module.exports.help = {
-    name: "test"
+    name: "test",
+    usage: "test",
+    desc: "May contains explosions."
 }
