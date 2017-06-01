@@ -29,7 +29,6 @@ fs.readdir("./cmds/", (err, files) => {
 
 bot.on("ready", () => {
    console.log(`${bot.user.username} is ready!`);
-   console.log(bot.commands)
 });
 
 bot.on("message", async message => {

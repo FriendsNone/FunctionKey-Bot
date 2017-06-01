@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
             .setDescription(`All of these commands are prefixed with ${config.prefix}`)
             .addField("Useful commands", "ping \nask \nuinfo", true)
             .addField("Music commands", "play \nskip \nstop", true)
-            .addField("Boring commands", "help", true)
+            .addField("Boring commands", "help \noff", true)
             .setColor("BLUE")
             .setTimestamp()
         message.channel.send({ embed });
