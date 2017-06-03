@@ -5,5 +5,6 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "ping",
     usage: "ping",
-    desc: "It's the most popular and common command!"
+    desc: "It's the most popular and common command!",
+    ex: "ping"
 }

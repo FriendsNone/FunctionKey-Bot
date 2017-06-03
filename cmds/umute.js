@@ -9,14 +9,15 @@ module.exports.run = async (bot, message, args) => {
 
     let role = message.guild.roles.find(r => r.name === "Muted");
     
-    if(!role || !toUmute.roles.has(role.id)) return message.channel.send("Not muted");
+    if(!role || !toUmute.roles.has(role.id)) return message.channel.send("asdf");
 
     await toUmute.removeRole(role);
-    message.channel.send("Unmuted");
+    message.channel.send(`${toUmute} is now unmuted!`);
 }
 
 module.exports.help = {
     name: "umute",
     usage: "umute [user]",
-    desc: "Unmutes that annoying user you've just muted."
+    desc: "Unmutes that annoying user you've just muted.",
+    ex: "umute @User"
 }

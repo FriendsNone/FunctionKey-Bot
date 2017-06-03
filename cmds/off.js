@@ -11,5 +11,6 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "off",
     usage: "off",
-    desc: "Turns off the bot! That's it."
+    desc: "Turns off the bot! That's it.",
+    ex: "off"
 }

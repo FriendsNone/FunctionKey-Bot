@@ -29,5 +29,6 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "ask",
     usage: "ask [question]",
-    desc: "A Magic 8 Ball ripoff"
+    desc: "A Magic 8 Ball ripoff",
+    ex: "ask Is life pointless?"
 }

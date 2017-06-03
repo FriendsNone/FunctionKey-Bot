@@ -16,7 +16,8 @@ module.exports.run = async (bot, message, args) => {
         let embed = new Discord.RichEmbed()
             .setAuthor(`${bot.user.username}'s ${args[0]} command`, bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
             .addField("Usage:", `${bot.commands.get(args[0]).help.usage}`, true)
-            .addField("Description:", `${bot.commands.get(args[0]).help.desc}`, true)
+            .addField("Example:", `${config.prefix}${bot.commands.get(args[0]).help.ex}`, true)
+            .addField("Description:", `${bot.commands.get(args[0]).help.desc}`)
             .setColor("BLUE")
             .setTimestamp()
         message.channel.send({ embed });
@@ -28,5 +29,6 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "help",
     usage: "help [command]",
-    desc: "Your traditional help."
+    desc: "Your traditional help.",
+    ex: `help help`
 }

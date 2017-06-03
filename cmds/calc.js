@@ -11,5 +11,6 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "calc",
     usage: "calc [equation]",
-    desc: "Too lazy for calculators? Use this!"
+    desc: "Too lazy for calculators? Use this!",
+    ex: "calc 1+1"
 }

@@ -43,6 +43,7 @@ bot.on("message", async message => {
 
     let cmd = bot.commands.get(command.slice(config.prefix.length))
     if(cmd) cmd.run(bot, message, args);
+    else message.channel.send(`I don't think thats a command. Try ${config.prefix}help`);
 });
 
 bot.login(config.token);
