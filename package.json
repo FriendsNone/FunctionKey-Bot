@@ -4,7 +4,7 @@
   "description": "An awesome bot made by a lazy person.",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bot"
   },
   "repository": {
     "type": "git",
