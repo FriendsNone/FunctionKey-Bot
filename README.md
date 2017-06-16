@@ -28,4 +28,6 @@ If you're a Windows user, follow these steps for getting FFmpeg working
 
 -The new `help` command doesn't updates for new command files. Soo, you'll have to update it manually. Sorry about that :P
 
+-Staff commands (`off`, `mute`, `umute`) doesn't check for roles and permissions. Stay Safe!
+
 -It's sort of stable... But! Expect some bugs crawling around.
