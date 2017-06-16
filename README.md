@@ -31,3 +31,7 @@ If you're a Windows user, follow these steps for getting FFmpeg working
 -Staff commands (`off`, `mute`, `umute`) doesn't check for roles and permissions. Stay Safe!
 
 -It's sort of stable... But! Expect some bugs crawling around.
+
+# License
+This repository (FunctionKey-Bot) is licensed under the MIT License
+For more information, please read `LICENSE`
