@@ -1,6 +1,6 @@
 # FunctionKey-Bot
 Alternatively named as NoneBot.
-A Discord bot made by a lazy person
+A Discord bot made by a lazy person.
 
 # Required stuffs
 - Programs
@@ -33,5 +33,5 @@ If you're a Windows user, follow these steps for getting FFmpeg working
 -It's sort of stable... But! Expect some bugs crawling around.
 
 # License
-This repository (FunctionKey-Bot) is licensed under the MIT License
-For more information, please read `LICENSE`
+This repository (FunctionKey-Bot) is licensed under the MIT License.
+For more information, please read `LICENSE`.
