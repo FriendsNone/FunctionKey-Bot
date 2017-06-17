@@ -4,7 +4,7 @@ const ytdl = require("ytdl-core");
 function play(connection, message) {
     var server = servers[message.guild.id];
 
-    server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly", quality: "lowest"}));
+    server.dispatcher = connection.playStream(ytdl(server.queue[0], {quality: "lowest", filter: "audioonly"}));
     ytdl.getInfo(server.queue[0], function(err, info) {
         let embed = new Discord.RichEmbed()
             .setAuthor("Now Playing")

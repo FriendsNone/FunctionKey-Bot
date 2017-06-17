@@ -1,5 +1,5 @@
 {
-  "name": "nonebot",
+  "name": "functionkeybot",
   "version": "1.0.0",
   "description": "An awesome bot made by a lazy person.",
   "main": "bot.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FriendsNone/NoneBot.git"
+    "url": "git+https://github.com/FriendsNone/FunctionKey-Bot.git"
   },
   "author": "Wizzardo Meowy (FriendsNone)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FriendsNone/NoneBot/issues"
+    "url": "https://github.com/FriendsNone/FunctionKey-Bot/issues"
   },
-  "homepage": "https://github.com/FriendsNone/NoneBot#readme",
+  "homepage": "https://github.com/FriendsNone/FunctionKey-Bot#readme",
   "dependencies": {
     "discord.js": "^11.1.0",
     "opusscript": "0.0.3",
