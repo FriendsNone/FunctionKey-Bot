@@ -46,4 +46,5 @@ bot.on("message", async message => {
     else message.channel.send(`I don't think thats a command. Try ${config.prefix}help`);
 });
 
-bot.login(config.token);
+//bot.login(config.token);
+bot.login(process.env.BOT_TOKEN);
