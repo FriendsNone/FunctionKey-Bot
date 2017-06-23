@@ -21,15 +21,17 @@ module.exports.run = async (bot, message, args) => {
     
     let embed = new Discord.RichEmbed()
         .setAuthor(`${bot.user.username}'s Status`, bot.user.avatarURL)
-        .addField("Bot Uptime:", uptime1)
-        .addField("System Uptime:", uptime2)
+        .setDescription(`Running ${process.release.name} (${process.version}) on ${process.platform} (${process.arch})`)
+        .addField("CPU Usage:", `User: ${process.cpuUsage().user}μs \nSystem: ${process.cpuUsage().system}μs`, true)
+        .addField("Uptime:", `Bot: ${uptime1} \nSystem: ${uptime2}`, true)
+        .setColor("GREEN")
         .setTimestamp()
     message.channel.send({ embed });
 }
 
 module.exports.help = {
-    name: "uptime",
-    usage: "uptime",
-    desc: "Checks status.",
-    ex: "uptime"
+    name: "stats",
+    usage: "stats",
+    desc: "Checks the bot's status.",
+    ex: "stats"
 }

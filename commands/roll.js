@@ -7,9 +7,9 @@ module.exports.run = async (bot, message, args) => {
         message.channel.send("Rolling an infinity dice... Halp!");
     } else {
         let embed = new Discord.RichEmbed()
-            .setAuthor(`${message.author.username} rolled a ${args[0]} sided dice.`, bot.user.avatarURL)
-            .setDescription(x)
-            .setTimestamp()
+            .setTitle(`${message.author.username} rolled a ${args[0]} sided dice.`)
+            .setDescription(`Then out comes... ${x}!`)
+            .setColor('RANDOM')
         message.channel.send({ embed });
     }
 }

@@ -1,26 +1,21 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const config = require("./config.json");
+const games = require("./games.js");
+
+var list = games.list;
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
 function setGame() {
-    var presence = {};
-    presence.game = {};
-    presence.status = "online";
-    presence.afk = false;
-    
-    switch (Math.floor(Math.random() * 1000) % 2) {
-        case 0:
-            presence.game.name = "Dark Souls";
-        break;
-
-        case 1:
-            presence.game.name = `${config.prefix}help for commands`;
-        break;
-    }
-    bot.user.setPresence(presence);
+    bot.user.setPresence({
+        status: 'online',
+        afk: false,
+        game: {
+            name: list[Math.floor(Math.random() * list.length)]
+        }
+    });
 }
 
 fs.readdir("./commands/", (err, files) => {
@@ -46,9 +41,9 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("ready", () => {
-   console.log(`${bot.user.username} is ready!`);
-   setGame();
-   bot.setInterval(setGame, 180000);
+    console.log(`${bot.user.username} is ready!`);
+    bot.setInterval(setGame, 180000);
+    setGame();
 });
 
 bot.on("message", async message => {
@@ -58,7 +53,7 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.slice(1);
-    
+
     if(!command.startsWith(config.prefix)) return;
 
     let cmd = bot.commands.get(command.slice(config.prefix.length))
