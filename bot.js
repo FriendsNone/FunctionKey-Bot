@@ -1,9 +1,22 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const config = require("./config.json");
+const games = require("./games.js");
+
+var list = games.list;
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
+
+function setGame() {
+    bot.user.setPresence({
+        status: 'online',
+        afk: false,
+        game: {
+            name: list[Math.floor(Math.random() * list.length)]
+        }
+    });
+}
 
 fs.readdir("./commands/", (err, files) => {
     if(err) console.error(err);
@@ -28,7 +41,9 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("ready", () => {
-   console.log(`${bot.user.username} is ready!`);
+    console.log(`${bot.user.username} is ready!`);
+    bot.setInterval(setGame, 180000);
+    setGame();
 });
 
 bot.on("message", async message => {
@@ -38,7 +53,7 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.slice(1);
-    
+
     if(!command.startsWith(config.prefix)) return;
 
     let cmd = bot.commands.get(command.slice(config.prefix.length))

@@ -37,6 +37,6 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "mute",
     usage: "mute  [user]",
-    desc: "Mutes the annoying user in your server!",
+    desc: "Mutes the annoying user in the server",
     ex: "mute @User"
 }
