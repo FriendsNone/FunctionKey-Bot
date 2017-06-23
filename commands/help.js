@@ -10,6 +10,7 @@ module.exports.run = async (bot, message, args) => {
             .addField("Music commands", "play \nskip \nstop", true)
             .addField("Info commands", "uinfo \nuptime \nhelp", true)
             .addField("Staff commands", "mute \numute \noff", true)
+            .setFooter("Problems? Issues? Suggestions? Click the link in the title.")
             .setColor("BLUE")
             .setTimestamp()
         message.channel.send({ embed });
@@ -19,6 +20,7 @@ module.exports.run = async (bot, message, args) => {
             .addField("Usage:", `${bot.commands.get(args[0]).help.usage}`, true)
             .addField("Example:", `${config.prefix}${bot.commands.get(args[0]).help.ex}`, true)
             .addField("Description:", `${bot.commands.get(args[0]).help.desc}`)
+            .setFooter("Problems? Issues? Suggestions? Click the link in the title.")
             .setColor("BLUE")
             .setTimestamp()
         message.channel.send({ embed });

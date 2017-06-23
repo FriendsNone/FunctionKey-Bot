@@ -5,6 +5,24 @@ const config = require("./config.json");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
+function setGame() {
+    var presence = {};
+    presence.game = {};
+    presence.status = "online";
+    presence.afk = false;
+    
+    switch (Math.floor(Math.random() * 1000) % 2) {
+        case 0:
+            presence.game.name = "Dark Souls";
+        break;
+
+        case 1:
+            presence.game.name = `${config.prefix}help for commands`;
+        break;
+    }
+    bot.user.setPresence(presence);
+}
+
 fs.readdir("./commands/", (err, files) => {
     if(err) console.error(err);
 
@@ -29,6 +47,8 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", () => {
    console.log(`${bot.user.username} is ready!`);
+   setGame();
+   bot.setInterval(setGame, 180000);
 });
 
 bot.on("message", async message => {
