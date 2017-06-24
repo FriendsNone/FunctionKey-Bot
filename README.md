@@ -1,22 +1,25 @@
 # FunctionKey-Bot
-Alternatively named as NoneBot.
-A Discord bot made by a lazy person.
+Alternatively named as FnKey-Bot. Previously named as NoneBot.
+
+A WIP fun Discord bot made by a lazy person. 
 
 # Required stuffs
 - Programs
   - Node.JS (7.10.0+)
   - FFmpeg
+  - Any terminal/console application
 - Dependencies
   - `discord.js`
   - `opusscript` (use `node-opus` if possible)
   - `ytdl-core`
+  - `require`
 
 # Installation
 Assuming that you've already installed git, Node.JS and FFmpeg. If not, install them now.
 1. Clone the repository with `git clone https://github.com/FriendsNone/NoneBot.git`
 2. Get the dependencies with `npm install`
-3. Check the `./cmds` folder and all `*.js` if it's properly cloned/downloaded
-4. Customize `config.json` and `./cmds/*.js` to your liking
+3. Check all the files if it's properly cloned/downloaded
+4. Customize `config.json`, `games.js`, and `commands/*.js` to your liking
 5. Run with `npm start`
 
 If you're a Windows user, follow these steps for getting FFmpeg working
@@ -24,11 +27,11 @@ If you're a Windows user, follow these steps for getting FFmpeg working
 2. Extract `ffmpeg.exe` to the bot's folder
 
 # Notes from the Dev
--`skip` works now! ~~Due to the rewrite I can't get the `skip` function working. The only workaround is to listen the whole song or enter the `stop` command and play another one.~~
-
--The new `help` command doesn't updates for new command files. Soo, you'll have to update it manually. Sorry about that :P
+-The `help` command doesn't updates for new command files. You'll have to update it manually. Sorry about that :P
 
 -Staff commands (`off`, `mute`, `umute`) doesn't check for roles and permissions. Stay Safe!
+
+-There's no proper moderation commands yet. Stay updated with that!
 
 -It's sort of stable... But! Expect some bugs crawling around.
 

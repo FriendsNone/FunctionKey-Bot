@@ -1,8 +1,8 @@
-const config = require("./config.json")
+﻿const config = require("./config.json")
 
 var list = [
     //Homemade games.
-    `${config.preix}help for commands`,
+    `${config.prefix}help for commands`,
     "Dark Souls",
     "with brakets",
 
