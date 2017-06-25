@@ -7,6 +7,7 @@ var list = games.list;
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
+bot.mutes = require("./mutes.json");
 
 function setGame() {
     bot.user.setPresence({
@@ -42,8 +43,32 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", () => {
     console.log(`${bot.user.username} is ready!`);
+    
     bot.setInterval(setGame, 180000);
     setGame();
+
+    bot.setInterval(() => {
+        for(let i in bot.mutes) {
+            let time = bot.mutes[i].time;
+            let guildId = bot.mutes[i].guild;
+            let guild = bot.guilds.get(guildId);
+            let member = guild.members.get(i);
+            let mutedRole = guild.roles.find(r => r.name === "Muted");
+            if(!mutedRole || !guild) continue;
+
+            if(Date.now() > time) {
+                console.log(`${i} is now able to be unmuted`);
+
+                member.removeRole(mutedRole);
+                delete bot.mutes[i];
+
+                fs.writeFile("./mutes.json", JSON.stringify(bot.mutes), err => {
+                    if(err) throw err;
+                    console.log(`I have unmuted ${member.user.tag}.`);
+                })
+            }
+        }
+    }, 5000)
 });
 
 bot.on("message", async message => {
