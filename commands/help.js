@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
             .setDescription(`All of these commands are prefixed with ${config.prefix}`)
             .addField("Useful Commands", "ask \ncalc \nroll \nsay \nxkcd", true)
             .addField("Music Commands", "play \nskip \nstop", true)
-            .addField("Informative Commands", "help \nping \nuinfo \nstats", true)
+            .addField("Informative Commands", "help \nping \nsearch \nuinfo \nstats", true)
             .addField("Staff Commands", "mute \noff \numute", true)
             .setFooter("Problems? Issues? Suggestions? Click the link in the title.")
             .setColor("BLUE")

@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/FriendsNone/FunctionKey-Bot#readme",
   "dependencies": {
-    "ddg": "0.0.3",
     "discord.js": "^11.1.0",
-    "google": "^2.1.0",
     "opusscript": "0.0.3",
     "request": "^2.81.0",
     "ytdl-core": "^0.14.1"
