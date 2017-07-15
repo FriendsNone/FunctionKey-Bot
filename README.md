@@ -1,14 +1,14 @@
 # FunctionKey-Bot
 Alternatively named as FnKey-Bot. Previously named as NoneBot.
 
-A WIP fun Discord bot made by a lazy person. 
+A WIP fun Discord bot made by a lazy person.
 
 # Required stuffs
 - Programs
   - Node.JS (7.10.0+)
   - FFmpeg
   - Any terminal/console application
-- Dependencies
+- Required Dependencies
   - `discord.js`
   - `opusscript` (use `node-opus` if possible)
   - `ytdl-core`
@@ -17,10 +17,10 @@ A WIP fun Discord bot made by a lazy person.
 # Installation
 Assuming that you've already installed git, Node.JS and FFmpeg. If not, install them now.
 1. Clone the repository with `git clone https://github.com/FriendsNone/NoneBot.git`
-2. Get the dependencies with `npm install`
+2. Get the required dependencies with `npm install`
 3. Check all the files if it's properly cloned/downloaded
 4. Customize `config.json`, `games.js`, and `commands/*.js` to your liking
-5. Run with `npm start`
+5. Open a terminal/console application and run `npm start`
 
 If you're a Windows user, follow these steps for getting FFmpeg working
 1. Download FFmpeg from https://ffmpeg.zeranoe.com/builds/

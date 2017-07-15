@@ -9,6 +9,6 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "xkcd",
     usage: "xkcd",
-    desc: "Sends some random XKCD commic",
+    desc: "Sends random XKCD commic",
     ex: "xkcd"
 }

@@ -1,11 +1,13 @@
+const fs = module.require("fs");
+
 module.exports.run = async (bot, message, args) => {
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("don't have permissions");
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have manage messages.");
 
     let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-    if(!toMute) return message.channel.send("Nothing to mute");
+    if(!toMute) return message.channel.send("You did not specify a user mention or ID!");
 
-    if(toMute.id === message.id) return message.channel.send("you can't unmute self");
-    if(toMute.highestRole.position >= message.member.highestRole.position) return message.channel.send("nope, staff");
+    if(toMute.id === message.id) return message.channel.send("You cannot mute yourself.");
+    if(toMute.highestRole.position >= message.member.highestRole.position) return message.channel.send("You cannot mute a member who is higher or has the same role as you.");
  
     let role = message.guild.roles.find(r => r.name === "Muted");
     if(!role) {
@@ -28,10 +30,19 @@ module.exports.run = async (bot, message, args) => {
         }
     }
 
-    if(toMute.roles.has(role.id)) return message.channel.send("Already muted");
+    if(toMute.roles.has(role.id)) return message.channel.send("This user is already muted!");
     
+    bot.mutes[toMute.id] = {
+        guild: message.guild.id,
+        time: Date.now() + parseInt(args[1]) * 1000
+    }
+
     await toMute.addRole(role);
-    message.channel.send("Muted");
+
+    fs.writeFile("./mutes.json", JSON.stringify(bot.mutes, null, 4), err => {
+        if(err) throw err;
+        message.channel.send("I have muted this user!");
+    })
 }
 
 module.exports.help = {

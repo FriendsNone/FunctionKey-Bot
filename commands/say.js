@@ -1,25 +1,25 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-    let comma = message.content.split(",");
-    
-    var kind = comma[0];
-    var title = comma[1];
-    var desc = comma[2];
+    let splits = message.content.split(",");
 
-    if(kind.indexOf("embed") >= 0) {
+    var type = splits[0];
+    var textA = splits[1];
+    var textB= splits[2];
+
+    if(type.indexOf("embed") >= 0) {
         let embed = new Discord.RichEmbed()
-            .setTitle(title)
-            .setDescription(desc)      
+            .setTitle(textA)
+            .setDescription(textB)
         message.channel.send({ embed })
-    } else if(kind.indexOf("code") >= 0) {
-        message.channel.send("`" + title + "`");
-    } else if(kind.indexOf("multi") >= 0) {
-        message.channel.send("```\n" + title + "```");
-    } else if(kind.indexOf("text") >= 0) {
-        message.channel.send(title);
-    } else if(!kind.indexOf("text", "code", "multi", "embed") >= 0) {
-        message.channel.send("Didn't understand that");
+    } else if(type.indexOf("code") >= 0) {
+        message.channel.send("`" + textA + "`");
+    } else if(type.indexOf("multi") >= 0) {
+        message.channel.send("```\n" + textA + "```");
+    } else if(type.indexOf("text") >= 0) {
+        message.channel.send(textA);
+    } else if(!type.indexOf("text", "code", "multi", "embed") >= 0) {
+        message.channel.send("You didn't specify the type of formatting.");
     }
 }
 
