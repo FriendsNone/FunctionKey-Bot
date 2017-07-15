@@ -1,3 +1,8 @@
+/*
+ * This code (bot.js) is licensed under the MIT License.
+ * For more information, please read `LICENSE`.
+ */
+ 
 const Discord = require("discord.js");
 const fs = require("fs");
 const config = require("./config.json");
@@ -43,7 +48,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", () => {
     console.log(`${bot.user.username} is ready!`);
-    
+
     bot.setInterval(setGame, 180000);
     setGame();
 

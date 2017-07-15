@@ -1,10 +1,10 @@
 module.exports.run = async (bot, message, args) => {
-    if (!args[0]) return message.channel.send("Nothing to calculate.");
+    if (!args[0]) return message.channel.send("Hidden numbers are cool! Isn't it?");
 
     try {
         message.channel.send(eval(args[0]));
     } catch (err) {
-        message.channel.send("There might be an error on your equation.")
+        message.channel.send("Try sovling it on paper!")
     }
 }
 

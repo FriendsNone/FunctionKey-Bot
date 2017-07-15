@@ -33,5 +33,5 @@ module.exports.help = {
     name: "help",
     usage: "help [command]",
     desc: "Your traditional help.",
-    ex: `help help`
+    ex: `help ping`
 }

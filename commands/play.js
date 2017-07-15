@@ -3,8 +3,8 @@ var play = music.play
 var servers = music.servers
 
 module.exports.run = async (bot, message, args) => {
-    if(!args[0]) return message.channel.send("You didn't provide a link/video id. Don't expect me to find videos.");
-    if(!message.member.voiceChannel) return message.channel.send("How can you listen to music without joining a voice channel? Magic...?");
+    if(!args[0]) return message.channel.send("I can't search you know...");
+    if(!message.member.voiceChannel) return message.channel.send("Don't forget to join a voice channel!");
     if(!servers[message.guild.id]) servers[message.guild.id] = { queue: [] };
 
     var server = servers[message.guild.id];
@@ -16,6 +16,6 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "play",
     usage: "play [link/video id]",
-    desc: "Plays music from YouTube.",
+    desc: "It plays YouTube!",
     ex: "play dQw4w9WgXcQ"
 }

@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-    
+
 module.exports.run = async (bot, message, args) => {
     var x = Math.floor(Math.random() * ((args[0] - 1) + 1) + 1);
 
@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
     name: "roll",
-    usage: "roll",
-    desc: "Love board games? Roll your way to victory with this command!",
-    ex: "roll"
+    usage: "roll [sides]",
+    desc: "Rolls a blank sided dice!",
+    ex: "roll 20"
 }
