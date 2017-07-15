@@ -5,8 +5,13 @@ var list = [
     `${config.prefix}help for commands`,
     "Dark Souls",
     "Oregon Trail",
+    "Kill the Squid!",
+    "Crash Fest",
     "with brakets",
     "with bugs",
+    "with buttons",
+    "in binary",
+    "in Base64",
 
     //User suggested games. Thanks guys!
     "the quiet game, why don't you play it instead?",   //Suggested by Rain
