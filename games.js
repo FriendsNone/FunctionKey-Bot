@@ -4,7 +4,9 @@ var list = [
     //Homemade games.
     `${config.prefix}help for commands`,
     "Dark Souls",
+    "Oregon Trail",
     "with brakets",
+    "with bugs",
 
     //User suggested games. Thanks guys!
     "the quiet game, why don't you play it instead?",   //Suggested by Rain
