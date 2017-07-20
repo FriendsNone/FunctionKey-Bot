@@ -1,7 +1,7 @@
 {
   "name": "functionkeybot",
-  "version": "1.0.0",
-  "description": "An awesome bot made by a lazy person.",
+  "version": "2.61",
+  "description": "A WIP fun Discord bot made by a lazy person.",
   "main": "bot.js",
   "scripts": {
     "start": "node bot"
@@ -19,6 +19,7 @@
   "dependencies": {
     "discord.js": "^11.1.0",
     "opusscript": "0.0.3",
+    "prompt": "^1.0.0",
     "request": "^2.81.0",
     "ytdl-core": "^0.14.1"
   }

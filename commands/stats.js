@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const why = require("../bot.js").keyVersion;
 
 String.prototype.toHHMMSS = function () {
     var sec_num = parseInt(this, 10);
@@ -21,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
     
     let embed = new Discord.RichEmbed()
         .setAuthor(`${bot.user.username}'s Status`, bot.user.avatarURL)
-        .setDescription(`Running ${process.release.name} (${process.version}) on ${process.platform} (${process.arch})`)
+        .setDescription(`Running version ${why} in ${process.release.name} (${process.version}) on ${process.platform} (${process.arch})`)
         .addField("CPU Usage:", `User: ${process.cpuUsage().user}μs \nSystem: ${process.cpuUsage().system}μs`, true)
         .addField("Uptime:", `Bot: ${uptime1} \nSystem: ${uptime2}`, true)
         .setColor("GREEN")

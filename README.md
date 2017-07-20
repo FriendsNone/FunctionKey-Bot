@@ -16,7 +16,7 @@ A WIP fun Discord bot made by a lazy person.
 
 # Installation
 Assuming that you've already installed git, Node.JS and FFmpeg. If not, install them now.
-1. Clone the repository with `git clone https://github.com/FriendsNone/NoneBot.git`
+1. Clone the repository with `git clone https://github.com/FriendsNone/FunctionKey-Bot.git`
 2. Get the required dependencies with `npm install`
 3. Check all the files if it's properly cloned/downloaded
 4. Customize `config.json`, `games.js`, and `commands/*.js` to your liking

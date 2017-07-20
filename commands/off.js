@@ -1,9 +1,9 @@
 module.exports.run = async (bot, message, args) => {
     message.channel.send("Welp. Nobody coded a prompt. Shutting down!").then(function () {
-        console.log(`${message.author.tag} from ${message.guild.name}  turned off the bot`);
+        console.log(`[INFO] ${message.author.tag} from ${message.guild.name}  turned off the bot`);
         process.exit(0);
     }).catch(function () {
-        console.log(`${message.author.tag} from ${message.guild.name} turned off the bot`);
+        console.log(`[INFO] ${message.author.tag} from ${message.guild.name} turned off the bot`);
         process.exit(0);
     });
 }

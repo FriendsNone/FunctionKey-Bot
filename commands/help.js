@@ -1,14 +1,16 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 
+const why = require("../bot.js").keyVersion;
+
 module.exports.run = async (bot, message, args) => {
     if (!args[0]) {
         let embed = new Discord.RichEmbed()
-            .setAuthor(`${bot.user.username}'s List of commands`, bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
+            .setAuthor(`${bot.user.username} ${why}'s List of commands`, bot.user.avatarURL, "https://github.com/FriendsNone/FunctionKey-Bot")
             .setDescription(`All of these commands are prefixed with ${config.prefix}`)
             .addField("Useful Commands", "ask \ncalc \nroll \nsay \nxkcd", true)
             .addField("Music Commands", "play \nskip \nstop", true)
-            .addField("Informative Commands", "help \nping \nsearch \nuinfo \nstats", true)
+            .addField("Informative Commands", "about \nhelp \nping \nsearch \nuinfo \nstats", true)
             .addField("Staff Commands", "mute \noff \numute", true)
             .setFooter("Problems? Issues? Suggestions? Click the link in the title.")
             .setColor("BLUE")
@@ -16,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
         message.channel.send({ embed });
     } else try {
         let embed = new Discord.RichEmbed()
-            .setAuthor(`${bot.user.username}'s ${args[0]} command`, bot.user.avatarURL, "https://github.com/FriendsNone/NoneBot")
+            .setAuthor(`${bot.user.username}'s ${args[0]} command`, bot.user.avatarURL, "https://github.com/FriendsNone/FunctionKey-Bot")
             .addField("Usage:", `${bot.commands.get(args[0]).help.usage}`, true)
             .addField("Example:", `${config.prefix}${bot.commands.get(args[0]).help.ex}`, true)
             .addField("Description:", `${bot.commands.get(args[0]).help.desc}`)
