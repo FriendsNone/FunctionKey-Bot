@@ -1,94 +1,90 @@
-/*
- * This code (bot.js) is licensed under the MIT License.
- * For more information, please read `LICENSE`.
- */
- 
+/***************************************************************************
+ *  A TL;DR version of the MIT License for FunctionKey-Bot
+ *  Copyright (c) 2017 Wizzardo Meowy
+ *  
+ *  You can use, copy, modify, and/or distribute this software for any
+ *  purpose without fee, as long as you credit the owner and have this
+ *  notice and the copy of the LICENCE file
+ * 
+ *  If you got this software/source code for a price. YOU'VE BEENED SCAMED!
+ *  ASK FOR A REFUND, ASAP! As this software/source code is available for
+ *  free at https://github.com/FriendsNone/FunctionKey-Bot
+ ***************************************************************************/
+
+// Required Stuffs
 const Discord = require("discord.js");
 const fs = require("fs");
 const config = require("./config.json");
 const games = require("./games.js");
 
-var list = games.list;
-
-const bot = new Discord.Client({disableEveryone: true});
+const bot = new Discord.Client({ disableEveryone: true });
 bot.commands = new Discord.Collection();
-bot.mutes = require("./mutes.json");
 
+// Presence Data
 function setGame() {
     bot.user.setPresence({
         status: 'online',
         afk: false,
         game: {
-            name: list[Math.floor(Math.random() * list.length)]
+            name: games.list[Math.floor(Math.random() * games.list.length)]
         }
-    });
+    })
 }
 
-fs.readdir("./commands/", (err, files) => {
-    if(err) console.error(err);
+// Modules Loader
+fs.readdir("./modules/", (err, files) => {
+    if (err) console.error(err);
 
-    let jsFiles = files.filter(f => f.split(".").pop() === "js");
-    if(jsFiles.length <= 0) {
-        console.log("No commands to load!");
+    let modules = files.filter(f => f.split(".").pop() === "js");
+    if (modules.length <= 0) {
+        console.log("No modules found. Running with no modules loaded.");
         return;
     }
 
-    console.log(`Loading ${jsFiles.length} commands!`);
-
-    jsFiles.forEach((f, i) => {
-        let props = require(`./commands/${f}`);
-        console.log(`${i + 1}: ${f} loaded!`);
+    console.log(`Now loading ${modules.length} modules.`)
+    modules.forEach((f, i) => {
+        let props = require(`./modules/${f}`);
         try {
             bot.commands.set(props.help.name, props);
         } catch (err) {
-            console.log("^ Invaild command file");
+            console.log('One or more of your module caused an error. Check your modules and try again. \n=> ' + err);
+            process.exit(1)
         }
-    });
-});
+    })
 
+    console.log(`Finshed loading all ${modules.length} modules.`)
+})
+
+// Ready Function
 bot.on("ready", () => {
-    console.log(`${bot.user.username} is ready!`);
+    console.log(`${bot.user.tag} ${config.version} is ready to rock!`);
 
-    bot.setInterval(setGame, 180000);
     setGame();
-
-    bot.setInterval(() => {
-        for(let i in bot.mutes) {
-            let time = bot.mutes[i].time;
-            let guildId = bot.mutes[i].guild;
-            let guild = bot.guilds.get(guildId);
-            let member = guild.members.get(i);
-            let mutedRole = guild.roles.find(r => r.name === "Muted");
-            if(!mutedRole || !guild) continue;
-
-            if(Date.now() > time) {
-                console.log(`${i} is now able to be unmuted`);
-
-                member.removeRole(mutedRole);
-                delete bot.mutes[i];
-
-                fs.writeFile("./mutes.json", JSON.stringify(bot.mutes), err => {
-                    if(err) throw err;
-                    console.log(`I have unmuted ${member.user.tag}.`);
-                })
-            }
-        }
-    }, 5000)
+    bot.setInterval(setGame, 60000);
 });
 
+// Command Processor
 bot.on("message", async message => {
-    if(message.author.bot) return;
-    if(message.channel.type === "dm") return;
+    if (message.author.bot) return;
+    if (message.channel.type === "dm") return;
 
-    let messageArray = message.content.split(" ");
-    let command = messageArray[0];
-    let args = messageArray.slice(1);
+    let array = message.content.split(" ");
+    let command = array[0];
+    let args  = array.slice(1);
 
-    if(!command.startsWith(config.prefix)) return;
+    if (!command.startsWith(config.prefix)) return;
 
     let cmd = bot.commands.get(command.slice(config.prefix.length))
-    if(cmd) cmd.run(bot, message, args);
-    else message.channel.send(`I don't think thats a command. Try ${config.prefix}help`);
+
+    if (cmd) {
+        cmd.run(bot, message, args);
+    } else {
+        message.channel.send("Hmm... I don't think I can run that. Try `" + config.prefix + "help`")
+    }
 });
 
-bot.login(config.token);
+// Login Function
+bot.login(config.token).catch(function() {
+    console.log("It seems like we can't connect to Discord. Try again later.")
+    process.exit(1)
+});

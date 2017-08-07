@@ -1,17 +1,30 @@
-﻿const config = require("./config.json")
+const config = require("./config.json")
 
 var list = [
     //Homemade games.
     `${config.prefix}help for commands`,
+    `Version: ${config.version}`,
     "Dark Souls",
     "Oregon Trail",
-    "Kill the Squid!",
+    "theShellTopPanel",
     "Crash Fest",
+    "Bug Hunting",
+    "Not trying to look at FriendsNone",
+    "NaN",
+    "null",
+    "undefined",    
+    "around",
     "with brakets",
     "with bugs",
     "with buttons",
+    "with squids",
+    "with keys",
+    "with tokens",
+    "with keyboards",
+    "with other bots",
     "in binary",
     "in Base64",
+    "in Dutch",
 
     //User suggested games. Thanks guys!
     "the quiet game, why don't you play it instead?",   //Suggested by Rain

@@ -4,7 +4,11 @@ const ytdl = require("ytdl-core");
 function play(connection, message) {
     var server = servers[message.guild.id];
 
-    server.dispatcher = connection.playStream(ytdl(server.queue[0], {quality: "lowest", filter: "audioonly"}));
+    server.dispatcher = connection.playStream(ytdl(server.queue[0], {
+        quality: "lowest",
+        filter: "audioonly"
+    }))
+
     ytdl.getInfo(server.queue[0], function(err, info) {
         let embed = new Discord.RichEmbed()
             .setAuthor("Now Playing")
@@ -21,9 +25,8 @@ function play(connection, message) {
         if (server.queue[0]) play(connection, message);
         else try {
             connection.disconnect();
-        } catch (e) {
-            console.log("[ERROR WARNING] opusscript is drunk again.");
-            console.log("[ERROR WARNING] note to self. use node-opus");
+        } catch (err) {
+            console.log(err)
         }
     });
 }

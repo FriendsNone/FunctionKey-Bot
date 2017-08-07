@@ -1,7 +1,7 @@
 {
-  "name": "functionkeybot",
-  "version": "1.0.0",
-  "description": "An awesome bot made by a lazy person.",
+  "name": "fnkey-bot",
+  "version": "3.63.0",
+  "description": "A fun WIP Discord bot made by a lazy person!",
   "main": "bot.js",
   "scripts": {
     "start": "node bot"
@@ -17,9 +17,10 @@
   },
   "homepage": "https://github.com/FriendsNone/FunctionKey-Bot#readme",
   "dependencies": {
+    "ddg": "0.0.3",
     "discord.js": "^11.1.0",
     "opusscript": "0.0.3",
     "request": "^2.81.0",
-    "ytdl-core": "^0.14.1"
+    "ytdl-core": "^0.14.4"
   }
 }
