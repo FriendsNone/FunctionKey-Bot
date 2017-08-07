@@ -1,4 +1,5 @@
 {
-    "token": "Your_Super_Gnarly_Token",
-    "prefix": "Your_Super_Awesome_Prefix"
+    "token": "bot_token",
+    "prefix": "bot_prefix",
+    "version": "RW-3"
 }
