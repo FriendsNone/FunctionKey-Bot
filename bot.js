@@ -84,7 +84,15 @@ bot.on("message", async message => {
 });
 
 // Login Function
-bot.login(config.token).catch(function() {
-    console.log("It seems like we can't connect to Discord. Try again later.")
+if (config.token == "" || config.token == "bot_token") {
+    console.log("You didn't add in your token yet.")
     process.exit(1)
-});
+} else if (config.prefix == "" || config.prefix == "bot_prefix") {
+    console.log("You didn't set your prefered prefix.")
+    process.exit(1)
+} else {
+    bot.login(config.token).catch(function() {
+        console.log("It seems like we can't connect to Discord. Try again later.")
+        process.exit(1)
+    });
+}

@@ -1,7 +1,7 @@
 module.exports.run = async (bot, message, args) => {
     switch (Math.floor(Math.random() * 1000) % 6) {
         case 0:
-            message.channel.send(`Haha! I won by ${bot.ping}ms!`);
+            message.channel.send(`Haha! I won by ${Math.round(bot.ping)}ms!`);
             break;
         case 1:
             message.channel.send('Much better than "Hello World!"'); 
