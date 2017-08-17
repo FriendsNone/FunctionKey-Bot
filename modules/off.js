@@ -1,6 +1,6 @@
 module.exports.run = async (bot, message, args) => {
     var reason =  message.content.split("~")[1];
-
+    
     if (!reason) {
         return message.channel.send("Shutting down with no reasons? I'd say no.");
     } else {
