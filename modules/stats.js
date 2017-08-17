@@ -1,4 +1,4 @@
-module.exports.run = async (bot, message, args) => {
+﻿module.exports.run = async (bot, message, args) => {
     const Discord = require("discord.js");
     const os = require("os");
     const config = require("../config.json");
@@ -23,11 +23,11 @@ module.exports.run = async (bot, message, args) => {
     var uptime2 = (time2 + "").toHHMMSS();
     
     let embed = new Discord.RichEmbed()
-        .setAuthor(`${bot.user.username} v${config.version} stats`, bot.user.avatarURL)
+        .setAuthor(`${bot.user.username} ${config.version} stats`, bot.user.avatarURL)
         .addField("CPU Usage:", `User: ${process.cpuUsage().user}μs \nSystem: ${process.cpuUsage().system}μs`, true)
         .addField("Memory Usage:", `Free: ${os.freemem()} B \nTotal: ${os.totalmem()} B`, true)
-        .addField("Uptime:", `Bot: ${uptime1} \nSystem: ${uptime2}`, true)
-        .addField("System:", `CPU: ${process.env.PROCESSOR_IDENTIFIER} (x${process.env.NUMBER_OF_PROCESSORS}) \nOS: ${os.type()} (${os.release()}) ${os.arch()} \nNode.js Version: ${process.version} \nIdentity: ${process.env.COMPUTERNAME} | ${process.env.USERNAME}`, true)
+        .addField("Uptime:", `Bot: ${uptime1} \nSystem: ${uptime2}`)
+        .addField("System:", `OS: ${os.type()} (${os.release()}) ${os.arch()} \nNode.js Version: ${process.version}`, true)
         .setColor("GREEN")
         .setTimestamp()
     message.channel.send({ embed });

@@ -1,9 +1,9 @@
 module.exports.run = async (bot, message, args) => {
     const Discord = require("discord.js");
+    const config = require("../config.json");
 
-    let version = require("../config.json").version;
     let embed = new Discord.RichEmbed()
-        .setTitle(`${bot.user.username} ${version}`)
+        .setTitle(`${bot.user.username} ${config.version}`)
         .setDescription(`A WIP fun Discord bot made by a lazy person.`)
         .addField("Git Repository:", "https://github.com/FriendsNone/FunctionKey-Bot")
         .addField("Readme:", "https://github.com/FriendsNone/FunctionKey-Bot/blob/master/README.md")
