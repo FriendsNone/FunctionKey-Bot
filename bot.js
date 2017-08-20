@@ -58,7 +58,7 @@ fs.readdir("./modules/", (err, files) => {
 
 // Ready Function
 bot.on("ready", () => {
-    console.log(`${bot.user.tag} ${config.version} is ready to rock!`);
+    console.log(`${bot.user.tag} ${config.VERSION} is ready to rock!`);
 
     setGame();
     bot.setInterval(setGame, 60000);
@@ -73,19 +73,19 @@ bot.on("message", async message => {
     let command = array[0];
     let args  = array.slice(1);
 
-    if (!command.startsWith(config.prefix)) return;
+    if (!command.startsWith(config.PREFIX)) return;
 
-    let cmd = bot.commands.get(command.slice(config.prefix.length))
+    let cmd = bot.commands.get(command.slice(config.PREFIX.length))
 
     if (cmd) {
         cmd.run(bot, message, args);
     } else {
-        message.channel.send("Hmm... I don't think I can run that. Try `" + config.prefix + "help`")
+        message.channel.send("Hmm... I don't think I can run that. Try `" + config.PREFIX + "help`")
     }
 });
 
 // Login Function
-bot.login(config.token).catch(function() {
+bot.login(config.TOKEN).catch(function() {
     console.log("It seems like we can't connect to Discord. Try again later.")
     process.exit(1)
 });

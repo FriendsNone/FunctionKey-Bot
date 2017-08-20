@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
                     .setAuthor(query)
                     .setDescription(data.AbstractText)
                     .setThumbnail(data.Image)
-                    .setColor("BLUE")
+                    .setColor([config.COLORS.RED, config.COLORS.GREEN, config.COLORS.BLUE])
                     .setFooter(`Source: ${data.AbstractURL}`)
                 message.channel.send("Here's what I got!", { embed })
             }

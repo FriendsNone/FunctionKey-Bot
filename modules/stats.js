@@ -23,12 +23,12 @@
     var uptime2 = (time2 + "").toHHMMSS();
     
     let embed = new Discord.RichEmbed()
-        .setAuthor(`${bot.user.username} ${config.version} stats`, bot.user.avatarURL)
+        .setAuthor(`${bot.user.username} ${config.VERSION} stats`, bot.user.avatarURL)
         .addField("CPU Usage:", `User: ${process.cpuUsage().user}μs \nSystem: ${process.cpuUsage().system}μs`, true)
         .addField("Memory Usage:", `Free: ${os.freemem()} B \nTotal: ${os.totalmem()} B`, true)
         .addField("Uptime:", `Bot: ${uptime1} \nSystem: ${uptime2}`)
         .addField("System:", `OS: ${os.type()} (${os.release()}) ${os.arch()} \nNode.js Version: ${process.version}`, true)
-        .setColor("GREEN")
+        .setColor([config.COLORS.RED, config.COLORS.GREEN, config.COLORS.BLUE])
         .setTimestamp()
     message.channel.send({ embed });
 }

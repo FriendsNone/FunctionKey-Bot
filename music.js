@@ -14,7 +14,7 @@ function play(connection, message) {
             .setAuthor("Now Playing")
             .setTitle(info.title)
             .setDescription(`Requested by: ${message.author.username}`)      
-            .setColor("GREEN")
+            .setColor([config.COLORS.RED, config.COLORS.GREEN, config.COLORS.BLUE])
             .setTimestamp()
         message.channel.send({ embed })
     });
