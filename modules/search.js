@@ -1,6 +1,7 @@
 module.exports.run = async (bot, message, args) => {
     const Discord = require("discord.js");
     const ddg = require("ddg");
+    const config = require("../config.json");
     
     var query =  message.content.split("~")[1];
 
