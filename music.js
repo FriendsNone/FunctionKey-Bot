@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const ytdl = require("ytdl-core");
+const config = require("./config.json");
 
 function play(connection, message) {
     var server = servers[message.guild.id];
@@ -14,7 +15,7 @@ function play(connection, message) {
             .setAuthor("Now Playing")
             .setTitle(info.title)
             .setDescription(`Requested by: ${message.author.username}`)      
-            .setColor("GREEN")
+            .setColor([config.COLORS.RED, config.COLORS.GREEN, config.COLORS.BLUE])
             .setTimestamp()
         message.channel.send({ embed })
     });

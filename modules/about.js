@@ -3,7 +3,7 @@ module.exports.run = async (bot, message, args) => {
     const config = require("../config.json");
 
     let embed = new Discord.RichEmbed()
-        .setTitle(`${bot.user.username} ${config.version}`)
+        .setTitle(`${bot.user.username} ${config.VERSION}`)
         .setDescription(`A WIP fun Discord bot made by a lazy person.`)
         .addField("Git Repository:", "https://github.com/FriendsNone/FunctionKey-Bot")
         .addField("Readme:", "https://github.com/FriendsNone/FunctionKey-Bot/blob/master/README.md")
@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Issues", "https://github.com/FriendsNone/FunctionKey-Bot/issues")
         .setFooter("<> by a lazy person filled with <3! c:")
         .setThumbnail(bot.user.avatarURL)
-        .setColor([251, 194, 26])
+        .setColor([config.COLORS.RED, config.COLORS.GREEN, config.COLORS.BLUE])
     message.channel.send({ embed });
 }
 

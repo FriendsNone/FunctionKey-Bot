@@ -1,5 +1,10 @@
 {
-    "token": "",
-    "prefix": "",
-    "version": "MK-3"
+    "TOKEN": "",
+    "PREFIX": "",
+    "VERSION": "MK-3",
+    "COLORS": {
+        "RED": 232,
+        "GREEN": 87,
+        "BLUE": 88
+    }
 }

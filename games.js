@@ -1,15 +1,14 @@
-const config = require("./config.json")
+const config = require("./config.json");
 
 var list = [
     //Homemade games.
-    `${config.prefix}help for commands`,
-    `Version: ${config.version}`,
+    `${config.PREFIX}help for commands`,
+    `Version: ${config.VERSION}`,
     "Dark Souls",
     "Oregon Trail",
     "theShellTopPanel",
     "Crash Fest",
     "Bug Hunting",
-    "Not trying to look at FriendsNone",
     "NaN",
     "null",
     "undefined",    

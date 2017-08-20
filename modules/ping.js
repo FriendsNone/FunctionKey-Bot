@@ -1,24 +1,14 @@
 module.exports.run = async (bot, message, args) => {
-    switch (Math.floor(Math.random() * 1000) % 6) {
-        case 0:
-            message.channel.send(`Haha! I won by ${Math.round(bot.ping)}ms!`);
-            break;
-        case 1:
-            message.channel.send('Much better than "Hello World!" | ' + Math.round(bot.ping) + 'ms`'); 
-            break;
-        case 2:
-            message.channel.send("Don't expect me to reply with `pong` | " + Math.round(bot.ping) + "ms");
-            break;
-        case 3:
-            message.channel.send(`Tennis! | ${Math.round(bot.ping)}ms`);
-            break;
-        case 4:
-            message.channel.send(`Badminton! | ${Math.round(bot.ping)}ms`);
-            break;
-        case 5:
-            message.channel.send(`Table Tennis! | ${Math.round(bot.ping)}ms`);
-            break;
-    }
+    var responses = [
+        "Hey! I'm alive!",
+        'Much better than "Hello World!"',
+        "Don't expect me to reply with `pong`",
+        "Tennis!",
+        "Badminton!",
+        "Table Tennis!"
+    ]
+    
+    message.channel.send(`${responses[Math.floor(Math.random() * responses.length)]} | ${Math.round(bot.ping)}ms`);
 }
 
 module.exports.help = {
