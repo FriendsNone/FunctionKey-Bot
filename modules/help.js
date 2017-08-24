@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
         let embed = new Discord.RichEmbed()
             .setAuthor(`${bot.user.username} ${config.VERSION} command list`, bot.user.avatarURL, "https://github.com/FriendsNone/FunctionKey-Bot")
             .setDescription(`Don't forget. All commands must be prefixed with ${config.PREFIX}`)
-            .addField("Fun Commands", "ask\ncalc\nhug\nroll\nsearch\nxkcd", true)
+            .addField("Fun Commands", "ask\nhug\nmath\nroll\nsearch\nxkcd", true)
             .addField("Music Commands", "play\nskip\nstop", true)
             .addField("Usual Commands", "about\nhelp\noff\nping\nstats", true)
             .setColor([config.COLORS.RED, config.COLORS.GREEN, config.COLORS.BLUE])

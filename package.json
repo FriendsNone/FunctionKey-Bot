@@ -19,6 +19,7 @@
   "dependencies": {
     "ddg": "0.0.3",
     "discord.js": "^11.1.0",
+    "mathjs": "^3.16.2",
     "opusscript": "0.0.3",
     "request": "^2.81.0",
     "ytdl-core": "^0.14.4"
