@@ -26,7 +26,7 @@ var list = [
     "in Dutch",
 
     //User suggested games. Thanks guys!
-    "the quiet game, why don't you play it instead?",   //Suggested by Rain
+    "the quiet game",                                   //Suggested by Rain
     "around with fn key",                               //Suggested by projsh_
     "around with theShell",                             //Suggested by vicr123
     "music",                                            //Suggested by lolrepeatlol™
