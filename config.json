@@ -3,8 +3,8 @@
     "PREFIX": "",
     "VERSION": "MK-3",
     "COLORS": {
-        "RED": 94,
-        "GREEN": 129,
-        "BLUE": 172
+        "RED": 232,
+ -      "GREEN": 87,
+ -      "BLUE": 88
     }
 }
