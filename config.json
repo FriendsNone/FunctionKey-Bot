@@ -4,7 +4,7 @@
     "VERSION": "MK-3",
     "COLORS": {
         "RED": 232,
-        "GREEN": 87,
-        "BLUE": 88
+ -      "GREEN": 87,
+ -      "BLUE": 88
     }
 }
