@@ -47,6 +47,10 @@ function setGame() {
     }
 }
 
+if(!fs.existsSync("./modules/")) {
+	log("Modules folder was not found. Creating it now.")
+	fs.mkdirSync("modules/")
+}
 // Modules Loader
 fs.readdir("./modules/", (err, files) => {
     try {
@@ -67,7 +71,7 @@ fs.readdir("./modules/", (err, files) => {
         try {
             bot.commands.set(props.help.name, props);
         } catch (err) {
-            console.log('One or more of your module caused an error. Check your modules and try again. \n=> ' + err);
+            console.log('One or more of your modules caused an error. Check your modules and try again. \n=> ' + err);
             process.exit(1)
         }
     })
