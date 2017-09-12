@@ -15,31 +15,36 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 
-if(!fs.existsSync("config.json")) {
-    console.log("It looks like the config.json file doesn't exist. Please create it.");
-    process.exit(1);
-}
-const config = require("./config.json");
-
-if(!fs.existsSync("games.js")) {
-    console.log("It looks like the games.js file doesn't exist. Please create it.");
-    process.exit(1);
-}
-const games = require("./games.js");
-
 const bot = new Discord.Client({ disableEveryone: true });
 bot.commands = new Discord.Collection();
 
 // Presence Data
+var failbackGame = false;
 function setGame() {
-    bot.user.setPresence({
-        status: 'online',
-        afk: false,
-        game: {
-            type: 0,
-            name: games.list[Math.floor(Math.random() * games.list.length)]
-        }
-    })
+    if (fs.existsSync("./games.js")) {
+        const games = require("./games.js");
+
+        bot.user.setPresence({
+            status: 'online',
+            afk: false,
+            game: {
+                type: 0,
+                name: games.list[Math.floor(Math.random() * games.list.length)]
+            }
+        })
+    } else {
+        console.log("Can't find the game list. Setting failback game.")
+        failbackGame = true;
+
+        bot.user.setPresence({
+            status: 'online',
+            afk: false,
+            game: {
+                type: 0,
+                name: "rip game list"
+            }
+        })
+    }
 }
 
 if(!fs.existsSync("./modules/")) {
@@ -48,12 +53,16 @@ if(!fs.existsSync("./modules/")) {
 }
 // Modules Loader
 fs.readdir("./modules/", (err, files) => {
-    if (err) console.error(err);
-
-    let modules = files.filter(f => f.split(".").pop() === "js");
-    if (modules.length <= 0) {
-        console.log("No modules found. Running with no modules loaded.");
-        return;
+    try {
+        var modules = files.filter(f => f.split(".").pop() === "js");
+    
+        if (modules.length <= 0) {
+            console.log("No modules found. Running with no modules loaded.");
+            return;
+        }
+    } catch (err) {
+        console.log("Modules folder not found. The bot can't run without it.")
+        process.exit(1)
     }
 
     console.log(`Now loading ${modules.length} modules.`)
@@ -70,12 +79,25 @@ fs.readdir("./modules/", (err, files) => {
     console.log(`Finshed loading all ${modules.length} modules.`)
 })
 
+// Login Function
+if (fs.existsSync("./config.json")) {
+    var config = require("./config.json");
+
+    bot.login(config.TOKEN).catch(function() {
+        console.log("It seems like we can't connect to Discord. Try again later.")
+        process.exit(1)
+    });
+} else {
+    console.log("Config file not found. Nothing will work without that file.")
+    process.exit(1)
+}
+
 // Ready Function
 bot.on("ready", () => {
     console.log(`${bot.user.tag} ${config.VERSION} is ready to rock!`);
 
     setGame();
-    bot.setInterval(setGame, 60000);
+    if (failbackGame == false) bot.setInterval(setGame, 300000);
 });
 
 // Command Processor
@@ -96,10 +118,4 @@ bot.on("message", async message => {
     } else {
         message.channel.send("Hmm... I don't think I can run that. Try `" + config.PREFIX + "help`")
     }
-});
-
-// Login Function
-bot.login(config.TOKEN).catch(function() {
-    console.log("It seems like we can't connect to Discord. Try again later.")
-    process.exit(1)
 });
