@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FriendsNone/FunctionKey-Bot#readme",
   "dependencies": {
+    "booru": "^0.3.3",
     "ddg": "0.0.3",
     "discord.js": "^11.1.0",
     "mathjs": "^3.16.2",

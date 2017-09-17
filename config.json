@@ -1,10 +1,11 @@
 {
     "TOKEN": "",
     "PREFIX": "",
-    "VERSION": "MK-3",
+    "VERSION": "3.0.8",
+    "HOST": "",
     "COLORS": {
         "RED": 232,
- -      "GREEN": 87,
- -      "BLUE": 88
+        "GREEN": 87,
+        "BLUE": 88
     }
 }
