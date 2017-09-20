@@ -2,7 +2,7 @@ module.exports.run = async (bot, message, args) => {
     const music = require('../music.js');
     var server = music.servers[message.guild.id];
 
-    if (server.dispatcher) server.dispatcher.end();
+    if (server.dispatcher) { server.dispatcher.end(); }
 }
 
 module.exports.help = {

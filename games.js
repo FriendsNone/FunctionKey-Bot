@@ -17,6 +17,7 @@ var list = [
     "Skyrim",
     "Shovel Knight",
     "Psychonauts",
+    "Dwarf Fortress",
     "Oregon Trail",
     "DOOM",
     "Space Quest III",

@@ -4,8 +4,8 @@
     "VERSION": "3.0.8",
     "HOST": "",
     "COLORS": {
-        "RED": 232,
-        "GREEN": 87,
-        "BLUE": 88
+        "RED": 83,
+        "GREEN": 78,
+        "BLUE": 103
     }
 }

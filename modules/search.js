@@ -27,5 +27,5 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "search",
     args: "~[query]",
-    notes: "Searches something on the web."
+    notes: "Searches something on Wikipedia."
 }

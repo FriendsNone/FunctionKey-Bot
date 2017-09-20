@@ -1,14 +1,22 @@
 # Modules for FunctionKey-Bot
-This is where you put your home/pre-made command modules.
+This is where you put the pre-made/user-coded command modules.
 
-# Included Command Modules
-|    Fun    |  Music  |   Usual  |
-|:---------:|:-------:|:--------:|
-|   ask.js  | play.js | about.js |
-|  calc.js  | skip.js |  help.js |
-|  roll.js  | stop.js |  off.js  |
-| search.js |         |  ping.js |
-|  xkcd.js  |         | stats.js |
+# Included Command Modules and it's Required Dependencies
+| Fun       |                                          | Internet  |                                            |
+|:---------:|:----------------------------------------:|:---------:|:------------------------------------------:|
+| ask.js    | -                                        | nsfw.js   | `discord.js`, `booru`, `../config.json`    | 
+| cowsay.js | `cowsay`                                 | reddit.js | `discord.js`, `snoowrap`, `../config.json` | 
+| hug.js    | -                                        | search.js | `discord.js`, `ddg`, `../config.json`      |
+| math.js   | `discord.js`, `mathjs`, `../config.json` | xkcd.js   | `request`                                  |
+| roll.js   | -                                        | -         | -                                          |
+
+| Music   |               | Technical |                                                |
+|:-------:|:-------------:|:---------:|:----------------------------------------------:|
+| play.js | `../music.js` | about.js  | `discord.js`, `github`, `../config.json`       |
+| skip.js | `../music.js` | help.js   | `discord.js`, `../config.json`                 |
+| stop.js | `../music.js` | off.js    | -                                              |
+| -       | -             | ping.js   | `fortune-teller`                               |
+| -       | -             | time.js   | `os`                                           |
 
 # DIY Command Modules
 You can make your own command modules too. Use the example code below for reference.
