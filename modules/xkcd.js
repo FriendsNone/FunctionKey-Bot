@@ -2,7 +2,7 @@ module.exports.run = async (bot, message, args) => {
     const request = require("request");
 
     var r = request.get('https://c.xkcd.com/random/comic/', function (err, res, body) {
-        message.channel.send(r.uri.href);
+        message.channel.send(`Here's your daily dose of **xkcd** ${r.uri.href}`);
     });
 }
 

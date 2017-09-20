@@ -2,11 +2,8 @@ module.exports.run = async (bot, message, args) => {
     const music = require('../music.js');
     var server = music.servers[message.guild.id];
 
-    try {
-        if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-    } catch (err) {
-        console.log('opusscript caught an error. \n=> ' + err);
-    }
+    try { if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect(); }
+    catch (err) {}
 }
 
 module.exports.help = {

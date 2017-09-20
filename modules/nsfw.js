@@ -5,6 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
     var query =  message.content.split("~");
     if (message.channel.nsfw == false) {
+        message.delete()
         message.channel.send("**AHEM!** Don't you have any manners? You don't want to get these poor souls corrupted. Right?")
     } else {
         booru.search("r34", [query[1], query[2]], {limit: 1, random: true}).then(booru.commonfy).then(images => {
@@ -30,10 +31,7 @@ module.exports.run = async (bot, message, args) => {
             if (err.name === 'booruError') {
                 message.channel.send("Seems like you're not getting any NSFW goodness.")
                 console.log(err.message)
-            } else {
-                //This means I messed up. Whoops.
-                console.log(err)
-            }
+            } else {}
         })
     }
 }

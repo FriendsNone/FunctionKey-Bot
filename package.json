@@ -1,6 +1,6 @@
 {
   "name": "fnkey-bot",
-  "version": "3.63.0",
+  "version": "3.0.8",
   "description": "A fun WIP Discord bot made by a lazy person!",
   "main": "bot.js",
   "scripts": {
@@ -18,11 +18,15 @@
   "homepage": "https://github.com/FriendsNone/FunctionKey-Bot#readme",
   "dependencies": {
     "booru": "^0.3.3",
+    "cowsay": "^1.2.1",
     "ddg": "0.0.3",
     "discord.js": "^11.1.0",
+    "fortune-teller": "^0.1.2",
+    "github": "^11.0.0",
     "mathjs": "^3.16.2",
     "opusscript": "0.0.3",
     "request": "^2.81.0",
+    "snoowrap": "^1.14.2",
     "ytdl-core": "^0.14.4"
   }
 }

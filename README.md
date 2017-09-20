@@ -9,14 +9,22 @@ A WIP fun Discord bot made by a lazy person. Now in it's 3rd Rewrite, Yay!
   - FFmpeg
   - Any terminal/console application
 - Dependencies
+  - `booru`
+  - `cowsay`
+  - `ddg`
   - `discord.js`
+  - `fortune-teller`
+  - `github`
+  - `mathjs`
   - `opusscript` or `node-opus`
-  - `ytdl-core`
   - `request`
+  - `snoowrap`
+  - `ytdl-core`
 - Files
   - `./modules/*.js`
   - `./config.json`
   - `./games.js`
+  - `./LICENSE`
   - `./music.js`
 
 # Installation
@@ -32,9 +40,6 @@ If you're a Windows user, follow these steps for getting FFmpeg working
 2. Extract `./bin/ffmpeg.exe` to the bot's folder
 
 If you want the `dev` branch, do `git checkout dev` after step 1
-
-# Dev Notes
-- None so far.
 
 # License
 This repository (FunctionKey-Bot) is licensed under the MIT License.

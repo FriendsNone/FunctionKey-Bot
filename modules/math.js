@@ -3,6 +3,8 @@ module.exports.run = async (bot, message, args) => {
     const math = require("mathjs");
     const config = require("../config.json");
 
+    if (!args[0]) return message.channel.send("If you're going to ask **1+1** then, Congrats.")
+
     try {
         var embed = new Discord.RichEmbed()
             .addField("Equation:", args[0])
@@ -21,5 +23,5 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
     name: "math",
     args: "[equation]",
-    notes: "It solves equations (can be inacurate)"
+    notes: "It solves equations (can be inaccurate)"
 }
