@@ -1,4 +1,4 @@
-# ![Function Key](./assets/fnkey4.svg)
+# ![Function Key](./assets/fnkey4.png)
 
 I know! It's now on version 4. Crazy, right?
 
