@@ -1,11 +1,8 @@
 ![Function Key 4](./assets/fnkey4.png)
-<center>
-    I know! Crazy, right? The same old fun Discord bot. Now in version 4!
-</center>
+I know! Crazy, right? The same old fun Discord bot. Now in version 4!
 
 Right now, only `./README.md` and the `./assets` folder is here. The whole thing is still work in progress. For now, enjoy this beautiful logo and this sort of useless `./README.md`. ETA will be next week (don't count on it).
 
-#
 ## Dependencies
 ### Programs
 - Any terminal application
@@ -27,7 +24,7 @@ Right now, only `./README.md` and the `./assets` folder is here. The whole thing
 - `./modules`
 - `./structure`
 - `./config.json`
-#
+
 ## Installation
 0. Install the required programs. After that, open your preferred terminal application.
 1. Clone the repository.
@@ -44,6 +41,6 @@ Right now, only `./README.md` and the `./assets` folder is here. The whole thing
     ```
     $ npm start
     ```
-#
+
 ## License
 This project is licensed under the MIT License. For more details about the licence, please read [`./LICENCE`](./LICENCE)
