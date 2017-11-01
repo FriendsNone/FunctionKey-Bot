@@ -1,23 +1,143 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="778.19" height="98.093" version="1.1" viewBox="0 0 205.9 25.954" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
- <title>Function Key 4</title>
- <metadata>
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title>Function Key 4</dc:title>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g transform="translate(-18.251 -219.98)">
-  <g transform="translate(0,3.289)" fill="#fff">
-   <g fill="#ffffff" font-family="Raleway" font-weight="900" letter-spacing="0px" stroke-width=".26458" word-spacing="0px">
-    <text x="16.701893" y="242.4912" font-size="25.4px" style="line-height:1.25" xml:space="preserve"><tspan x="16.701893" y="242.4912" fill="#ffffff" font-size="25.4px" stroke-width=".26458">FUNCTION KEY</tspan></text>
-    <text x="17.734848" y="222.87018" font-size="8.4667px" style="line-height:1.25" xml:space="preserve"><tspan x="17.734848" y="222.87018" fill="#ffffff" font-size="8.4668px" stroke-width=".26458">FRIENDSNONE'</tspan></text>
-    <text x="203.9704" y="237.83189" font-family="sans-serif" font-size="34.926px" font-weight="normal" letter-spacing="0px" stroke-width=".070004" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="203.9704" y="237.83189" fill="#ffffff" font-family="raleway" font-size="36.689px" font-weight="900" stroke-width=".070004">4</tspan></text>
-   </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 416.52663 58.146857"
+   height="58.146854mm"
+   width="416.52664mm"
+   sodipodi:docname="fnkey4.svg"
+   inkscape:export-filename="/home/friendsnone/bitmap.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1338"
+     inkscape:window-height="714"
+     id="namedview823"
+     showgrid="false"
+     showguides="true"
+     units="mm"
+     inkscape:pagecheckerboard="true"
+     inkscape:guide-bbox="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="215.31345"
+     inkscape:cy="342.83683"
+     inkscape:window-x="9"
+     inkscape:window-y="43"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid825"
+       originx="-16.058281"
+       originy="-37.163464" />
+    <sodipodi:guide
+       position="-0.00034694806,0.2399389"
+       orientation="1,0"
+       id="guide4516"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0.068899052,0.3060849"
+       orientation="0,1"
+       id="guide4518"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0.10920705,36.373135"
+       orientation="0,1"
+       id="guide4520"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="372.55056,36.280118"
+       orientation="1,0"
+       id="guide4522"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0.050295052,18.288451"
+       orientation="0,1"
+       id="guide4524"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="186.27562,36.563304"
+       orientation="1,0"
+       id="guide4526"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="164.38755,57.695866"
+       orientation="0,1"
+       id="guide4528"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="212.45697,41.664802"
+       orientation="0,1"
+       id="guide4530"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-4.2012889,-235.71685)"
+     id="layer1">
+    <text
+       id="text12"
+       y="293.5589"
+       x="1.102489"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:50.79999924px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Heavy';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;opacity:1;vector-effect:none;fill:#151515;fill-opacity:1;stroke-width:0.07000268;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="fill:#151515;fill-opacity:1;stroke-width:0.07000268"
+         y="293.5589"
+         x="1.102489"
+         id="tspan10">FUNCTION KEY</tspan></text>
+    <text
+       id="text24"
+       y="252.19862"
+       x="2.8241189"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:8.46666622px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Heavy';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;opacity:1;vector-effect:none;fill:#151515;fill-opacity:1;stroke-width:0.07000268;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:22.57777786px;fill:#151515;fill-opacity:1;stroke-width:0.07000268"
+         y="252.19862"
+         x="2.8241189"
+         id="tspan22">FRIENDSNONE'</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:83.96111298px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Heavy';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;opacity:1;vector-effect:none;fill:#151515;fill-opacity:1;stroke-width:0.07000268;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="375.51947"
+       y="283.12048"
+       id="text4534"><tspan
+         sodipodi:role="line"
+         id="tspan4532"
+         x="375.51947"
+         y="283.12048"
+         style="font-size:82.19721985px;fill:#151515;fill-opacity:1;stroke-width:0.07000268">4</tspan></text>
   </g>
- </g>
 </svg>
