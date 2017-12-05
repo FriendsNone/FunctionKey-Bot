@@ -23,4 +23,6 @@ The same old fun Discord bot. Now in version 4! What a surprise!
 
 </p>
 
-# THIS PROJECT WENT INTO LOCKDOWN! I feel like there's someone copying the bot.
+# THIS PROJECT WENT INTO LOCKDOWN! 
+
+# I feel like there's someone copying the bot.
