@@ -1,0 +1,8 @@
+{
+    "token": "youtube_api_token",
+    "GLOBAL": false,
+    "MAX_QUEUE_SIZE": 20,
+    "MAX_PLAYLIST_LENGTH": 15,
+    "DEFAULT_VOLUME": 100,
+    "ALLOW_ALL_SKIP": false
+}

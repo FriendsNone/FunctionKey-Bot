@@ -1,40 +1,31 @@
-/***************************************************************************
- * A TL;DR version of the MIT License for FunctionKey-Bot
+/**
  * Copyright (c) 2017 Wizzardo Meowy
- *
- * You can use, copy, modify, and/or distribute this software for any
- * purpose without fee, as long as you credit the owner and have this
- * notice and the copy of the LICENCE file
- * 
- * If you want to copy something from this project, ask permission first!
- * Don't copy code without permission. That's called plagiarism!
- *
- * If you got this software/source code for a price. YOU'VE BEENED SCAMED!
- * ASK FOR A REFUND, ASAP! As this software/source code is available for
- * free at https://github.com/FriendsNone/FunctionKey-Bot
- ***************************************************************************/
+ * Read the included LICENSE file for more information.
+ */
 
-const commando = require('discord.js-commando');
+const { Command } = require('discord.js-commando');
 const cowsay = require('cowsay');
 
-class CowsayCommand extends commando.Command {
+module.exports = class Fun_Cowsay extends Command {
     constructor(client) {
         super(client, {
             name: 'cowsay',
             group: 'fun',
             memberName: 'cowsay',
-            description: 'Moo!',
-            format: '[words]'
+            description: 'Moo! I\'m a talking cow!',
+            format: '[text]',
+            args: [
+                {
+                    key: 'text',
+                    prompt: 'What? You don\'t believe in talking cows?',
+                    type: 'string',
+                    wait: 30
+                }
+            ]
         });
     }
 
-    async run(message, args) {
-        if (!args) {
-            message.channel.send('```\n' + cowsay.say({ text : 'Meow!' }) + '```');
-        } else {
-            message.channel.send('```\n' + cowsay.say({ text : args }) + '```');
-        }
+    run(msg, { text }) {
+        msg.channel.send(`\`\`\`\n ${cowsay.say({ text: text })} \`\`\``);
     }
-}
-
-module.exports = CowsayCommand;
+};
