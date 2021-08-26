@@ -7,6 +7,22 @@
     <strong>The merry joyful Discord bot! Made by a lazy person.</strong>
 </div>
 
+## Current State
+It's been a while since the last time I've worked on FunctionKey-Bot. This project was never a serious thing. Stepping into uncharted territory, just to get along with the trend with friends. Never learned anything from countless tutorials and documentations. Focus shifting away from the project, putting it all on finishing high school.
+
+Basically, I've lost all interest on continuing this.
+
+### What's going to happen?
+This repository will be archived for historical reasons. As well as for others to fork and make derivatives of. No more updates, no more bug fixes, no more new featues. As for the bot itself. It'll stay online indefinitely. If you decide to run your own instance, **DO IT AT YOUR OWN RISK!** There will be no support, if bad things happen. **You're on your own.**
+
+### What's the future of FunctionKey-Bot?
+There is no future yet as I'm still in college. But keep an eye on my profile. Maybe there will be a new version, or a rewrite, or a new bot. But who knows? Even I don't know.
+
+### Final words
+I'm not dead or gonna leave the programming space. In fact, with it renewed in college. I've never been more excited to write code than ever before!
+
+Of course. This project wouldn't exist if it weren't for my interest in programming, and for my friends who supported me. And as well as for those small few who have invited and used the bot. **Thank you for everything!** 
+
 ## Channel Log
 Ho ho ho! v4.1 (17-12) is here! Just head over to the [Releases](https://github.com/FriendsNone/FunctionKey-Bot/releases) tab for some channel log goodness!
 
